@@ -6,6 +6,7 @@
     <title>SZN.no - Premium Domener</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Global reset */
         * {
             margin: 0;
             padding: 0;
@@ -14,85 +15,122 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #F4F7FA;
+            background-color: #f7f7f7;
             color: #333;
         }
 
-        header {
-            background-color: #1D2A3A;
-            color: white;
-            padding: 50px 0;
+        /* Navigation bar */
+        nav {
+            background-color: #0a3c73;
+            padding: 20px 0;
             text-align: center;
         }
 
-        header h1 {
-            font-size: 48px;
+        nav a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 0;
+            text-transform: uppercase;
             font-weight: 600;
         }
 
-        header p {
-            font-size: 18px;
+        nav a:hover {
+            border-bottom: 2px solid #ff6a00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #007BFF, #00BFFF);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
             margin-top: 10px;
         }
 
+        .cta-button {
+            background-color: #FF6A00;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #E55A00;
+        }
+
+        /* Domain Listing */
         .domain-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 40px;
-            padding: 60px 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .domain-item {
             background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
             text-align: center;
-            position: relative;
         }
 
         .domain-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .domain-image {
+        .domain-item img {
             width: 100%;
             height: 150px;
-            background-color: #EAEAEA;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            object-fit: cover;
         }
 
         .domain-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             margin: 20px 0;
         }
 
         .buy-button {
-            background-color: #FF6A00;
+            background-color: #007BFF;
             color: white;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             text-transform: uppercase;
             cursor: pointer;
+            margin-bottom: 20px;
             transition: background-color 0.3s ease;
         }
 
         .buy-button:hover {
-            background-color: #E55A00;
+            background-color: #0056b3;
         }
 
+        /* Footer */
         footer {
-            background-color: #1D2A3A;
+            background-color: #0a3c73;
             color: white;
             padding: 30px 0;
             text-align: center;
@@ -102,113 +140,71 @@
             font-size: 14px;
         }
 
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
+        footer a {
+            color: #FF6A00;
+            text-decoration: none;
         }
 
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            width: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .modal-button {
-            background-color: #FF6A00;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-
-        .modal-button:hover {
-            background-color: #E55A00;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>SZN.no</h1>
-    <p>Premium domener til salgs – Kjøp, invester og bygg din merkevare</p>
-</header>
+<!-- Navigation Bar -->
+<nav>
+    <a href="#">Hjem</a>
+    <a href="#">Tjenester</a>
+    <a href="#">Kontakt</a>
+</nav>
 
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Premium Domener Til Salgs</h1>
+    <p>Invester i en unik og minneverdig nettadresse for din virksomhet</p>
+    <button class="cta-button">Kjøp Domene Nå</button>
+</section>
+
+<!-- Domain Listing -->
 <main>
     <div class="domain-list">
         <!-- Domain Item 1 -->
-        <div class="domain-item" onclick="openModal('frakting.no')">
-            <div class="domain-image">
-                <img src="https://via.placeholder.com/150" alt="Logo" />
-            </div>
+        <div class="domain-item">
+            <img src="https://via.placeholder.com/500x150" alt="Frakting.no">
             <p class="domain-name">frakting.no</p>
-            <button class="buy-button">Kjøp Nå</button>
+            <button class="buy-button" onclick="sendEmail('frakting.no')">Kjøp Nå</button>
         </div>
 
         <!-- Domain Item 2 -->
-        <div class="domain-item" onclick="openModal('databruk.no')">
-            <div class="domain-image">
-                <img src="https://via.placeholder.com/150" alt="Logo" />
-            </div>
+        <div class="domain-item">
+            <img src="https://via.placeholder.com/500x150" alt="Databruk.no">
             <p class="domain-name">databruk.no</p>
-            <button class="buy-button">Kjøp Nå</button>
+            <button class="buy-button" onclick="sendEmail('databruk.no')">Kjøp Nå</button>
         </div>
 
         <!-- Domain Item 3 -->
-        <div class="domain-item" onclick="openModal('sikkerhetsnett.no')">
-            <div class="domain-image">
-                <img src="https://via.placeholder.com/150" alt="Logo" />
-            </div>
+        <div class="domain-item">
+            <img src="https://via.placeholder.com/500x150" alt="Sikkerhetsnett.no">
             <p class="domain-name">sikkerhetsnett.no</p>
-            <button class="buy-button">Kjøp Nå</button>
+            <button class="buy-button" onclick="sendEmail('sikkerhetsnett.no')">Kjøp Nå</button>
         </div>
     </div>
 </main>
 
+<!-- Footer -->
 <footer>
     <p>&copy; 2024 SZN.no | Alle rettigheter reservert</p>
+    <p><a href="#">Personvern</a> | <a href="#">Vilkår og betingelser</a></p>
 </footer>
 
-<!-- Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <h2>Bekreft Kjøp</h2>
-        <p>Er du sikker på at du ønsker å kjøpe dette domenet? Vi vil kontakte deg for videre informasjon.</p>
-        <button class="modal-button" onclick="sendEmail()">Bekreft Kjøp</button>
-        <button class="modal-button" onclick="closeModal()">Lukk</button>
-    </div>
-</div>
-
 <script>
-    // Modal functionality
-    function openModal(domain) {
-        document.getElementById("myModal").style.display = "block";
-        localStorage.setItem('domainName', domain); // Store domain name for later use
-    }
-
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
-
-    function sendEmail() {
-        const domain = localStorage.getItem('domainName');
+    function sendEmail(domain) {
         window.location.href = `mailto:kontakt@szn.no?subject=Interessert i ${domain}&body=Jeg ønsker å kjøpe ${domain}.`;
-        closeModal(); // Close the modal after sending the email
     }
 </script>
 
 </body>
 </html>
+
 
