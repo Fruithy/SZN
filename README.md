@@ -1,0 +1,2 @@
+# SZN.NO
+Domain Website
