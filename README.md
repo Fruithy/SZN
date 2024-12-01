@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SZN.no - Premium Domener</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* Global reset */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,65 +14,50 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #f9f9f9;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* Navigation bar */
+        /* Navigation Bar */
         nav {
-            background-color: #0a3c73;
-            padding: 20px 0;
+            background-color: #333;
+            padding: 20px;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
 
         nav a {
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             text-decoration: none;
-            margin: 0 15px;
-            padding: 10px 0;
+            margin: 0 20px;
             text-transform: uppercase;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            border-bottom: 2px solid #ff6a00;
+            color: #FF6A00;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to right, #007BFF, #00BFFF);
+            background: linear-gradient(45deg, #007BFF, #00BFFF);
             color: white;
             text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 50px;
+            padding: 80px 20px;
+            margin-bottom: 60px;
         }
 
         .hero h1 {
-            font-size: 50px;
+            font-size: 60px;
             font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        .cta-button {
-            background-color: #FF6A00;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            text-transform: uppercase;
-            margin-top: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #E55A00;
+            font-size: 24px;
         }
 
         /* Domain Listing */
@@ -91,28 +75,24 @@
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: transform 0.3s ease;
             text-align: center;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .domain-item:hover {
             transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .domain-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
+        .domain-item h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        .domain-name {
-            font-size: 22px;
-            font-weight: 600;
-            margin: 20px 0;
-        }
-
-        .buy-button {
-            background-color: #007BFF;
+        .meld-interesse-button {
+            background-color: #FF6A00;
             color: white;
             padding: 12px 30px;
             border: none;
@@ -120,17 +100,17 @@
             font-size: 16px;
             text-transform: uppercase;
             cursor: pointer;
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .buy-button:hover {
-            background-color: #0056b3;
+        .meld-interesse-button:hover {
+            background-color: #E55A00;
+            transform: translateY(-5px);
         }
 
         /* Footer */
         footer {
-            background-color: #0a3c73;
+            background-color: #333;
             color: white;
             padding: 30px 0;
             text-align: center;
@@ -148,6 +128,7 @@
         footer a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
@@ -163,7 +144,6 @@
 <section class="hero">
     <h1>Premium Domener Til Salgs</h1>
     <p>Invester i en unik og minneverdig nettadresse for din virksomhet</p>
-    <button class="cta-button">Kjøp Domene Nå</button>
 </section>
 
 <!-- Domain Listing -->
@@ -171,23 +151,20 @@
     <div class="domain-list">
         <!-- Domain Item 1 -->
         <div class="domain-item">
-            <img src="https://via.placeholder.com/500x150" alt="Frakting.no">
-            <p class="domain-name">frakting.no</p>
-            <button class="buy-button" onclick="sendEmail('frakting.no')">Kjøp Nå</button>
+            <h2>Frakting.no</h2>
+            <button class="meld-interesse-button" onclick="sendEmail('Frakting.no')">Meld Interesse</button>
         </div>
 
         <!-- Domain Item 2 -->
         <div class="domain-item">
-            <img src="https://via.placeholder.com/500x150" alt="Databruk.no">
-            <p class="domain-name">databruk.no</p>
-            <button class="buy-button" onclick="sendEmail('databruk.no')">Kjøp Nå</button>
+            <h2>Databruk.no</h2>
+            <button class="meld-interesse-button" onclick="sendEmail('Databruk.no')">Meld Interesse</button>
         </div>
 
         <!-- Domain Item 3 -->
         <div class="domain-item">
-            <img src="https://via.placeholder.com/500x150" alt="Sikkerhetsnett.no">
-            <p class="domain-name">sikkerhetsnett.no</p>
-            <button class="buy-button" onclick="sendEmail('sikkerhetsnett.no')">Kjøp Nå</button>
+            <h2>Sikkerhetsnett.no</h2>
+            <button class="meld-interesse-button" onclick="sendEmail('Sikkerhetsnett.no')">Meld Interesse</button>
         </div>
     </div>
 </main>
@@ -206,5 +183,4 @@
 
 </body>
 </html>
-
 
