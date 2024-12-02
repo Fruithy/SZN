@@ -1,6 +1,6 @@
 
-function sendInterest(domain) {
-    const emailBody = `Hei, jeg er interessert i domenenavnet ${domain}.`;
-    const mailtoLink = `mailto:Kontakt@Navnhuset.no?subject=Interesse for domenenavn&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+// script.js
+function kontaktOss(domenenavn) {
+    alert(`Takk for din interesse for ${domenenavn}!
+Send oss en e-post på kontakt@Navnhuset.no for mer informasjon.`);
 }
