@@ -85,7 +85,7 @@ body {
 }
 
 .site-nav a:hover {
-    color: #3498db;
+    color: #18cb96; /* Endret hover-farge */
 }
 
 .menu-toggle {
@@ -162,7 +162,7 @@ body {
 
 .domain-name,
 .service-name {
-    color: #3498db;
+    color: #18cb96; /* Endret hovedfarge for navn */
     font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 15px;
@@ -189,22 +189,22 @@ body {
 }
 
 .button.primary {
-    background-color: #3498db;
+    background-color: #18cb96; /* Endret primær knappfarge */
     color: #fff;
 }
 
 .button.primary:hover {
-    background-color: #2980b9;
+    background-color: #14a37a; /* Mørkere variant for hover */
 }
 
 .button.secondary {
     background-color: #fff;
-    color: #3498db;
-    border: 1px solid #3498db;
+    color: #18cb96; /* Endret sekundær knappfarge */
+    border: 1px solid #18cb96;
 }
 
 .button.secondary:hover {
-    background-color: #3498db;
+    background-color: #18cb96; /* Endret sekundær knapp hover-farge */
     color: #fff;
 }
 
@@ -229,7 +229,7 @@ body {
 }
 
 .sold-domain-name {
-    color: #e74c3c; /* En annen farge for å skille fra tilgjengelige domener */
+    color: #e74c3c; /* Beholder rød farge for solgte domener for kontrast */
     font-size: 1.6em;
     font-weight: 700;
     margin-bottom: 5px;
@@ -242,14 +242,14 @@ body {
 
 /* Kontakt */
 .contact-link {
-    color: #3498db;
+    color: #18cb96; /* Endret kontaktlenkfarge */
     font-size: 1.3em;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-link:hover {
-    color: #2980b9;
+    color: #14a37a; /* Mørkere variant for hover */
     text-decoration: underline;
 }
 
@@ -301,4 +301,48 @@ body {
 
     .site-nav ul {
         flex-direction: column;
-        align-items: center
+        align-items: center;
+    }
+
+    .site-nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .site-nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .site-nav a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 2.8em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* En kolonne på mindre skjermer */
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .sold-domain-name {
+        font-size: 1.4em;
+    }
+
+    .contact-link {
+        font-size: 1.2em;
+    }
+}
