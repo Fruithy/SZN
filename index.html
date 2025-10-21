@@ -1,41 +1,49 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Szn.no – Digital Marketing, Domains & AI</title>
+  <meta name="description" content="Szn.no – Digital marketing, premium domains, and AI solutions for modern businesses." />
+  <meta property="og:title" content="Szn.no – Digital Marketing, Domains & AI" />
+  <meta property="og:description" content="Boost your digital presence with marketing, domains, and AI expertise." />
+  <meta property="og:image" content="https://szn.no/og-image.jpg" />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">Szn.no</div>
-    <nav>
+  <header class="navbar">
+    <a href="index.html" class="logo">Szn.no</a>
+    <nav id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <section class="hero">
-    <h1>Boost Your Digital Presence with Szn.no</h1>
-    <p>Marketing, premium domains, and AI tools for the modern business.</p>
-    <a href="contact.html" class="btn">Let’s Talk</a>
+    <div class="hero-content">
+      <h1>Boost Your Digital Presence with <span class="accent">Szn.no</span></h1>
+      <p>Marketing, premium domains, and AI tools for the modern business.</p>
+      <a href="contact.html" class="btn primary">Let’s Talk</a>
+    </div>
   </section>
 
   <section class="features">
-    <div class="feature">
+    <div class="feature-card">
       <h2>📈 Maximize Visibility</h2>
       <p>We help businesses and influencers stand out through smart online marketing and premium digital assets.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h2>🌐 Domain & Username Power</h2>
       <p>Your domain is your brand. We provide top-tier names to match your ambition.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h2>🤖 AI That Works</h2>
       <p>We consult on practical, safe AI integration to boost productivity and creativity — no gimmicks.</p>
     </div>
@@ -47,5 +55,7 @@
 
   <script src="script.js"></script>
 </body>
+</html>
+
 </html>
 
