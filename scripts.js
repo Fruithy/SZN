@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open user's email client with pre-filled content as fallback
     const subject = encodeURIComponent('SZN.no — New inquiry from ' + name);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-    window.location.href = `mailto:hello@szn.no?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:Magnusrobbestad@gmail.com?subject=${subject}&body=${body}`;
   });
 
   // Mailto button fallback
   document.getElementById('btn-mailto').addEventListener('click', () => {
-    window.location.href = 'mailto:hello@szn.no';
+    window.location.href = 'mailto:Magnusrobbestad@gmail.com';
   });
 });
