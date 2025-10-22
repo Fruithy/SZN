@@ -1,201 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SZN.no — Luxury Marketing & AI</title>
-  <meta name="description" content="SZN.no — Photography, Online Presence & AI integration for premium brands." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SZN — Creative Marketing Agency</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/">SZN.<span class="dot">NO</span></a>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#domains">Premium Domains</a>
-        <a href="#contact" class="cta">Work with us</a>
-      </nav>
-    </div>
+  <header>
+    <div class="logo">SZN<span>.</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home" aria-label="Intro">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="hero-line">Elevate your brand.</span>
-            <span class="hero-line typed" id="typed-lines" aria-hidden="true"></span>
-          </h1>
-          <p class="hero-sub">Photography — Online presence — AI-driven growth. A boutique agency for premium brands.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Start a project</a>
-            <a class="btn btn-ghost" href="#domains">View domains</a>
-          </div>
-        </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="reveal-text">Your season starts here.</h1>
+      <p>We help creators, brands, and professionals stand out online through design, trends, and storytelling.</p>
+      <button id="cta-btn">Work with us</button>
+    </div>
+  </section>
 
-        <figure class="hero-media" aria-hidden="true">
-          <!-- Minimal art/placeholder - replace with hero image or photography -->
-          <div class="media-frame">
-            <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="g" x1="0" x2="1">
-                  <stop offset="0" stop-color="#f6f4f1"/>
-                  <stop offset="1" stop-color="#fff"/>
-                </linearGradient>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#g)"></rect>
-              <g fill="none" stroke="#e9e7e4" stroke-width="1.5">
-                <path d="M10 300 C 150 120 450 120 590 300" opacity="0.18"/>
-                <path d="M10 260 C 150 80 450 80 590 260" opacity="0.12"/>
-              </g>
-            </svg>
-          </div>
-        </figure>
+  <section id="about" class="fade-in">
+    <h2>About SZN</h2>
+    <p>Based in Norway, SZN is a creative agency built for the digital age. We blend trend insight with sharp branding to help you express your identity online — authentically and beautifully.</p>
+  </section>
+
+  <section id="services" class="fade-in">
+    <h2>What We Do</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Social Presence</h3>
+        <p>Profile optimization, platform strategy, and aesthetic alignment across all social channels.</p>
       </div>
-    </section>
-
-    <!-- ABOUT / MISSION -->
-    <section class="mission container">
-      <div class="mission-inner">
-        <p class="eyebrow">SZN.no</p>
-        <h2>We blend creativity with technology to make premium brands stand out.</h2>
-        <p class="mission-text">From editorial photography to crafting an online presence and integrating AI tools that scale — we create experiences that feel handcrafted, yet intelligent.</p>
+      <div class="service-card">
+        <h3>Photo & Video</h3>
+        <p>Professional shoots and creative editing to bring your brand’s visuals to life.</p>
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="services container">
-      <h3 class="section-title">What we do</h3>
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <!-- camera icon -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 7h3l1-2h8l1 2h3v12H3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="12" cy="13" r="3" stroke="currentColor" stroke-width="1.2"/>
-            </svg>
-          </div>
-          <h4>Photography</h4>
-          <p>Luxury imagery and brand direction for editorial campaigns, product photography and content that converts.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <!-- web icon -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Online Presence</h4>
-          <p>Websites, social creative, SEO-led strategy and UX that reflect the premium nature of your brand.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <!-- AI icon -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3v18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M8 7v10M16 7v10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M4 11h4M16 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>AI Integration</h4>
-          <p>Custom AI solutions to automate workflows, personalize content and unlock data-driven growth.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PREMIUM DOMAINS -->
-    <section id="domains" class="domains container">
-      <h3 class="section-title">Premium domains for sale</h3>
-      <p class="domains-intro">Curated short domains ideal for bold brands. Inquire to buy or request brokerage.</p>
-
-      <div class="domains-grid" id="domains-grid">
-        <!-- Domain cards; add/remove as needed -->
-        <div class="domain-card">
-          <div class="domain-name">Databruk.no</div>
-          <div class="domain-desc">Perfect for a high-end internet service.</div>
-          <div class="domain-actions">
-            <a class="btn btn-outline" href="mailto:hello@szn.no?subject=Inquiry%20DATABRUK.NO">Inquire</a>
-          </div>
-        </div>
-
-        <div class="domain-card">
-          <div class="domain-name">SZN.NO</div>
-          <div class="domain-desc">Creative agency or lifestyle brand with instant recall.</div>
-          <div class="domain-actions">
-            <a class="btn btn-outline" href="mailto:hello@szn.no?subject=Inquiry%20SZN.NO">Inquire</a>
-          </div>
-        </div>
-
-        
-
-      
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact container">
-      <div class="contact-inner">
-        <div class="contact-info">
-          <p class="eyebrow">Let's work</p>
-          <h3>Start a premium project</h3>
-          <p>Tell us about your vision — we'll handle the rest.</p>
-          <ul class="contact-meta">
-            <li><strong>Email:</strong> <a href="mailto:Magnusrobbestad@gmail.com">Magnusrobbestad@gmail.com</a></li>
-            <li><strong>Location:</strong> Oslo, Norway</li>
-          </ul>
-        </div>
-
-        <form id="contact-form" class="contact-form" novalidate>
-          <label>
-            <span class="label-text">Name</span>
-            <input type="text" name="name" required />
-          </label>
-
-          <label>
-            <span class="label-text">Email</span>
-            <input type="email" name="email" required />
-          </label>
-
-          <label>
-            <span class="label-text">Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send message</button>
-            <button type="button" class="btn btn-ghost" id="btn-mailto">Email instead</button>
-          </div>
-
-          <p class="form-note">We typically reply within 48 hours.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <a class="logo" href="/">SZN.<span class="dot">NO</span></a>
-        <p class="copyright">© <span id="year"></span> SZN.no — All rights reserved.</p>
-      </div>
-
-      <div class="footer-right">
-        <nav class="footer-nav">
-          <a href="#services">Services</a>
-          <a href="#domains">Domains</a>
-          <a href="#contact">Contact</a>
-        </nav>
+      <div class="service-card">
+        <h3>Trend Strategy</h3>
+        <p>Stay ahead of the curve with our custom trend reports and content ideas tailored to your niche.</p>
       </div>
     </div>
+  </section>
+
+  <footer id="contact" class="fade-in">
+    <h2>Let’s create your next season</h2>
+    <p>Ready to elevate your brand? Get in touch today.</p>
+    <button id="contact-btn">Contact Us</button>
+    <p class="small">© 2025 SZN. All rights reserved.</p>
   </footer>
 
   <script src="scripts.js"></script>
