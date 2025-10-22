@@ -1,75 +1,28 @@
-/* scripts.js — minimal interactions & typed hero */
-document.addEventListener('DOMContentLoaded', () => {
-  // typed hero lines
-  const lines = [
-    "Capture your vision.",
-    "Elevate your presence.",
-    "Empower with AI."
-  ];
-  const typedEl = document.getElementById('typed-lines');
+// CTA Button (email)
+document.getElementById('cta-btn').addEventListener('click', () => {
+  window.location.href = 'mailto:Magnusrobbestad@gmail.com?subject=Let’s%20work%20together&body=Hi%20SZN%20team,%0D%0A%0D%0AI’d%20love%20to%20collaborate%20with%20you%20on...';
+});
 
-  // simple type-and-delete loop
-  let li = 0, ci = 0, deleting = false;
-  const typeSpeed = 60;
-  const pauseAfter = 1300;
+document.getElementById('contact-btn').addEventListener('click', () => {
+  window.location.href = 'mailto:Magnusrobbestad@gmail.com?subject=Let’s%20work%20together';
+});
 
-  function tick() {
-    const current = lines[li];
-    if (!deleting) {
-      typedEl.textContent = current.slice(0, ci+1);
-      ci++;
-      if (ci === current.length) {
-        deleting = true;
-        setTimeout(tick, pauseAfter);
-        return;
-      }
-    } else {
-      typedEl.textContent = current.slice(0, ci-1);
-      ci--;
-      if (ci === 0) {
-        deleting = false;
-        li = (li + 1) % lines.length;
-      }
-    }
-    setTimeout(tick, deleting ? typeSpeed/1.4 : typeSpeed);
-  }
-  tick();
+// Scroll fade-in animation
+const faders = document.querySelectorAll('.fade-in');
 
-  // Smooth scroll for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
   });
+}, appearOptions);
 
-  // Year in footer
-  const year = new Date().getFullYear();
-  document.getElementById('year').textContent = year;
-
-  // Contact form -> fallback to mailto or just show a small success (no backend)
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Basic validation
-    const name = form.querySelector('[name="name"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const msg = form.querySelector('[name="message"]').value.trim();
-    if (!name || !email || !msg) {
-      alert('Please complete all fields before sending.');
-      return;
-    }
-    // Open user's email client with pre-filled content as fallback
-    const subject = encodeURIComponent('SZN.no — New inquiry from ' + name);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-    window.location.href = `mailto:Magnusrobbestad@gmail.com?subject=${subject}&body=${body}`;
-  });
-
-  // Mailto button fallback
-  document.getElementById('btn-mailto').addEventListener('click', () => {
-    window.location.href = 'mailto:Magnusrobbestad@gmail.com';
-  });
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
