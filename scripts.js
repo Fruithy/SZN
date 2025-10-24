@@ -3,7 +3,7 @@
 
 (() => {
   const products = [
-    { id:1, title:"Tossy Fox Fur Wool Overcoat", season:"winter", price:"Kr 665", desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", imageAlt:"<a href="https://s.click.aliexpress.com/e/_c4ekDZkJ target="_blank"><img src="//ae01.alicdn.com/kf/Seb290325182b4173975206aa7cb17408c.jpg_80x80.jpg" /></a>", affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" },
+    { id:1, title:"Tossy Fox Fur Wool Overcoat", season:"winter", price:"Kr 665", desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", imageAlt:"href="https://s.click.aliexpress.com/e/_c4ekDZkJ target="_blank"><img src="//ae01.alicdn.com/kf/Seb290325182b4173975206aa7cb17408c.jpg_80x80.jpg", affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" },
     { id:2, title:"Sleeveless Knitted Bodycon Dress", season:"summer", price:"Kr 82", desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", imageAlt:"href="https://s.click.aliexpress.com/e/_c3diOdP5 target="_blank"><img src="//ae01.alicdn.com/kf/See57c60003684ff1af8a53c5c8d5d6bcQ.jpg_80x80.jpg"", affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" },
     { id:3, title:"Autumn Lantern Set", season:"autumn", price:"€29", desc:"Battery-powered warm glow.", imageAlt:"Lanterns", affiliate:"https://example.com/aff?prod=3" },
     { id:4, title:"Spring Herb Kit", season:"spring", price:"€15", desc:"Grow basil, thyme & parsley.", imageAlt:"Herb kit", affiliate:"https://example.com/aff?prod=4" },
