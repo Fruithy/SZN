@@ -1,66 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SZN — Seasonal Finds</title>
-  <meta name="description" content="SZN — curated seasonal products, affiliate marketplace. Minimal, fast, and sleek." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <meta name="theme-color" content="#0f1724">
 </head>
-<body class="page">
-  <header class="header">
-    <div class="container header-inner">
-      <a class="logo" href="/">SZN<span class="dot">.</span>no</a>
-      <nav class="nav">
-        <button class="btn ghost" id="seasonToggle">Season: <span id="currentSeasonLabel">All</span></button>
-        <input id="search" class="search" placeholder="Search products, e.g. 'ski'…" aria-label="Search products">
-      </nav>
+<body>
+  <header>
+    <h1>SZN</h1>
+    <p class="tagline">Curated seasonal essentials</p>
+
+    <div class="controls">
+      <select id="seasonSelect">
+        <option value="all">All</option>
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+        <option value="autumn">Autumn</option>
+        <option value="winter">Winter</option>
+      </select>
+      <input id="search" placeholder="Search…" />
+      <button id="seasonToggle">⟳</button>
+      <span id="currentSeasonLabel"></span>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1 class="title">Make every season your season.</h1>
-      <p class="subtitle">Curated seasonal products — gear, decor, and essentials — all with affiliate links. Low fuss, high style.</p>
-      <div class="controls">
-        <select id="seasonSelect" aria-label="Choose season">
-          <option value="all">All Seasons</option>
-          <option value="spring">Spring</option>
-          <option value="summer">Summer</option>
-          <option value="autumn">Autumn</option>
-          <option value="winter">Winter</option>
-        </select>
-        <a id="subscribeBtn" class="btn primary" href="#subscribe">Join the SZN Digest</a>
-      </div>
-    </section>
-
-    <section class="grid-wrap" aria-live="polite">
-      <div id="productsGrid" class="grid"></div>
-    </section>
-
-    <section id="subscribe" class="subscribe">
-      <h2>Get seasonal drops</h2>
-      <form id="subscribeForm" class="sub-form" autocomplete="off" novalidate>
-        <input type="email" id="email" placeholder="you@domain.com" required aria-label="Email address">
-        <button class="btn primary" type="submit">Subscribe</button>
-      </form>
-      <p class="fine">We never spam. Links are affiliate — helps keep SZN alive.</p>
-    </section>
+  <main>
+    <div id="productsGrid" class="grid"></div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <small>© <span id="year"></span> SZN.no — curated seasonal affiliate marketplace</small>
-      <div class="foot-links">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-      </div>
-    </div>
+  <footer>
+    <form id="subscribeForm">
+      <input id="email" type="email" placeholder="Subscribe for drops" required />
+      <button type="submit">→</button>
+    </form>
+    <p>© <span id="year"></span> SZN</p>
   </footer>
 
-  <script src="scripts.js" defer></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
