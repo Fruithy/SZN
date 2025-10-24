@@ -5,7 +5,7 @@
   const products = [
     { 
       id:1, 
-      title:"Fox Fur Wool Overcoat", 
+      title:"Fur Wool Overcoat", 
       season:"winter", 
       price:"665 Kr", 
       desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", 
