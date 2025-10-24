@@ -27,7 +27,23 @@
       id:3, 
       title:"ETJ 1975 Denim Midi Dress", 
       season:"spring", 
-
+      price:"235 Kr", 
+      desc:"Slim fit, lapel neckline, side-zip detail.", 
+      imageAlt:"Denim Midi Dress",
+      image:"https://ik.imagekit.io/Szn/Products/blackdress.jpg?updatedAt=1761338583854", 
+      affiliate:"https://s.click.aliexpress.com/e/_c3JXTBFN" 
+    },
+    { 
+      id:4, 
+      title:"Merino Wool Wide-Leg Knit Pants", 
+      season:"winter", 
+      price:"168 Kr", 
+      desc:"Soft cashmere blend — effortless warmth for autumn and winter.", 
+      imageAlt:"Merino Wool Knit Pants", 
+      image:"https://ik.imagekit.io/Szn/Products/furlegs.jpg?updatedAt=1761338583953", 
+      affiliate:"https://s.click.aliexpress.com/e/_c4OcaWHz" 
+    }
+  ];
 
   // DOM refs
   const grid = document.getElementById('productsGrid');
@@ -43,38 +59,37 @@
 
   // render function
   function renderProducts(list){
-  grid.innerHTML = '';
-  if (!list.length) {
-    grid.innerHTML = `<div class="card"><div class="thumbnail">No results</div><div style="color:var(--muted)">Try a different season or search term.</div></div>`;
-    return;
-  }
-  list.forEach(p => {
-    const el = document.createElement('article');
-    el.className = 'card';
-    el.innerHTML = `
-      <div class="thumbnail" role="img" aria-label="${escapeHtml(p.imageAlt)}">
-        ${p.image
-          ? `<img src="${p.image}" alt="${escapeHtml(p.imageAlt)}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`
-          : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="rgba(255,255,255,0.03)"/></svg>`}
-      </div>
-      <div>
-        <div class="meta">
-          <div>
-            <div class="title-small">${escapeHtml(p.title)}</div>
-            <div class="desc" style="color:var(--muted);font-size:0.9rem">${escapeHtml(p.desc)}</div>
-          </div>
-          <div class="price">${escapeHtml(p.price)}</div>
+    grid.innerHTML = '';
+    if (!list.length) {
+      grid.innerHTML = `<div class="card"><div class="thumbnail">No results</div><div style="color:var(--muted)">Try a different season or search term.</div></div>`;
+      return;
+    }
+    list.forEach(p => {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <div class="thumbnail" role="img" aria-label="${escapeHtml(p.imageAlt)}">
+          ${p.image
+            ? `<img src="${p.image}" alt="${escapeHtml(p.imageAlt)}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`
+            : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="rgba(255,255,255,0.03)"/></svg>`}
         </div>
-      </div>
-      <div style="display:flex;gap:8px;align-items:center">
-        <a class="btn" data-aff="${encodeURI(p.affiliate)}" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
-        <button class="btn ghost preview" data-id="${p.id}">Preview</button>
-      </div>
-    `;
-    grid.appendChild(el);
-  });
-}
-
+        <div>
+          <div class="meta">
+            <div>
+              <div class="title-small">${escapeHtml(p.title)}</div>
+              <div class="desc" style="color:var(--muted);font-size:0.9rem">${escapeHtml(p.desc)}</div>
+            </div>
+            <div class="price">${escapeHtml(p.price)}</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <a class="btn" data-aff="${encodeURI(p.affiliate)}" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
+          <button class="btn ghost preview" data-id="${p.id}">Preview</button>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+  }
 
   // simple filtering
   function filterProducts(){
@@ -82,7 +97,7 @@
     const q = searchInput.value.trim().toLowerCase();
     currentSeasonLabel.textContent = season === 'all' ? 'All' : capitalize(season);
     let list = products.filter(p => {
-      const seasonMatch = (season === 'all') || (p.season === season) || (p.season === 'all');
+      const seasonMatch = (season === 'all') || (p.season.toLowerCase() === season) || (p.season === 'all');
       const text = (p.title + ' ' + p.desc).toLowerCase();
       const queryMatch = !q || text.includes(q);
       return seasonMatch && queryMatch;
@@ -110,7 +125,6 @@
       alert('Please enter a valid email.');
       return;
     }
-    // simulated opt-in (replace with real endpoint)
     document.getElementById('subscribeForm').innerHTML = `<div style="color:var(--muted)">Thanks — check your inbox for the welcome note.</div>`;
   });
 
