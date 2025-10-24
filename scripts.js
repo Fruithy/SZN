@@ -3,12 +3,31 @@
 
 (() => {
   const products = [
-    { id:1, title:"Fox Fur Wool Overcoat", season:"winter", price:"665 Kr", desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", imageAlt:"",image:"https://ik.imagekit.io/Szn/Products/furcoat.jpg?updatedAt=1761338583934", affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" },
-    { id:2, title:"Sleeveless Knitted Dress", season:"summer", price:"82 Kr", desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", imageAlt:"",image:"https://ik.imagekit.io/Szn/Products/summerdress.jpg?updatedAt=1761338583916", affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" },
-    { id:3, title:"ETJ 1975 Denim Midi Dress", season:"Spring", price:"235 Kr", desc:"Slim fit, lapel neckline, side-zip detail.", imageAlt:"Denim Midi Dress",image:"https://ik.imagekit.io/Szn/Products/blackdress.jpg?updatedAt=1761338583854", affiliate:"https://s.click.aliexpress.com/e/_c3JXTBFN" },
-    { id:4, title:"Merino Wool Wide-Leg Knit Pants", season:"winter", price:"168 Kr", desc:"Soft cashmere blend — effortless warmth for autumn and winter.", imageAlt:"Soft cashmere blend — effortless warmth for autumn and winter.",image:"https://ik.imagekit.io/Szn/Products/furlegs.jpg?updatedAt=1761338583953" affiliate:"https://s.click.aliexpress.com/e/_c4OcaWHz" },
-    
-    {
+    { 
+      id:1, 
+      title:"Fox Fur Wool Overcoat", 
+      season:"winter", 
+      price:"665 Kr", 
+      desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", 
+      imageAlt:"Fox Fur Wool Overcoat",
+      image:"https://ik.imagekit.io/Szn/Products/furcoat.jpg?updatedAt=1761338583934", 
+      affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" 
+    },
+    { 
+      id:2, 
+      title:"Sleeveless Knitted Dress", 
+      season:"summer", 
+      price:"82 Kr", 
+      desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", 
+      imageAlt:"Sleeveless Knitted Dress", 
+      image:"https://ik.imagekit.io/Szn/Products/summerdress.jpg?updatedAt=1761338583916", 
+      affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" 
+    },
+    { 
+      id:3, 
+      title:"ETJ 1975 Denim Midi Dress", 
+      season:"spring", 
+
 
   // DOM refs
   const grid = document.getElementById('productsGrid');
