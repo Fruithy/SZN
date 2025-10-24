@@ -5,11 +5,10 @@
   const products = [
     { id:1, title:"Fox Fur Wool Overcoat", season:"winter", price:"665 Kr", desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", imageAlt:"",image:"https://ik.imagekit.io/Szn/Products/furcoat.jpg?updatedAt=1761338583934", affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" },
     { id:2, title:"Sleeveless Knitted Dress", season:"summer", price:"82 Kr", desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", imageAlt:"",image:"https://ik.imagekit.io/Szn/Products/summerdress.jpg?updatedAt=1761338583916", affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" },
-    { id:3, title:"Autumn Lantern Set", season:"autumn", price:"€29", desc:"Battery-powered warm glow.", imageAlt:"Lanterns", affiliate:"https://example.com/aff?prod=3" },
-    { id:4, title:"Spring Herb Kit", season:"spring", price:"€15", desc:"Grow basil, thyme & parsley.", imageAlt:"Herb kit", affiliate:"https://example.com/aff?prod=4" },
-    { id:5, title:"All-Season Insulated Bottle", season:"all", price:"€24", desc:"Keeps drinks hot or cold.", imageAlt:"Bottle", affiliate:"https://example.com/aff?prod=5" },
-    { id:6, title:"Festival Portable Charger", season:"summer", price:"€34", desc:"Compact, fast-charging.", imageAlt:"Power bank", affiliate:"https://example.com/aff?prod=6" }
-  ];
+    { id:3, title:"ETJ 1975 Denim Midi Dress", season:"Spring", price:"235 Kr", desc:"Slim fit, lapel neckline, side-zip detail.", imageAlt:"Denim Midi Dress",image:"https://ik.imagekit.io/Szn/Products/blackdress.jpg?updatedAt=1761338583854", affiliate:"https://s.click.aliexpress.com/e/_c3JXTBFN" },
+    { id:4, title:"Merino Wool Wide-Leg Knit Pants", season:"winter", price:"168 Kr", desc:"Soft cashmere blend — effortless warmth for autumn and winter.", imageAlt:"Soft cashmere blend — effortless warmth for autumn and winter.",image:"https://ik.imagekit.io/Szn/Products/furlegs.jpg?updatedAt=1761338583953" affiliate:"https://s.click.aliexpress.com/e/_c4OcaWHz" },
+    
+    {
 
   // DOM refs
   const grid = document.getElementById('productsGrid');
