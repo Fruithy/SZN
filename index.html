@@ -1,156 +1,66 @@
-:root{
-  --bg:#0b1220;
-  --card:#0f1724;
-  --muted:#9aa4b2;
-  --accent:#7c3aed; /* sleek purple */
-  --glass: rgba(255,255,255,0.04);
-  --radius:16px;
-  --max-width:1100px;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color-scheme: dark;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SZN — Seasonal Finds</title>
+  <meta name="description" content="SZN — curated seasonal products, affiliate marketplace. Minimal, fast, and sleek." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0f1724">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="/">SZN<span class="dot">.</span>no</a>
+      <nav class="nav">
+        <button class="btn ghost" id="seasonToggle">Season: <span id="currentSeasonLabel">All</span></button>
+        <input id="search" class="search" placeholder="Search products, e.g. 'ski'…" aria-label="Search products">
+      </nav>
+    </div>
+  </header>
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body.page{
-  margin:0;
-  background:linear-gradient(180deg,#061018 0%,#071229 50%);
-  color:#e6eef8;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-}
+  <main class="container">
+    <section class="hero">
+      <h1 class="title">Make every season your season.</h1>
+      <p class="subtitle">Curated seasonal products — gear, decor, and essentials — all with affiliate links. Low fuss, high style.</p>
+      <div class="controls">
+        <select id="seasonSelect" aria-label="Choose season">
+          <option value="all">All Seasons</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="autumn">Autumn</option>
+          <option value="winter">Winter</option>
+        </select>
+        <a id="subscribeBtn" class="btn primary" href="#subscribe">Join the SZN Digest</a>
+      </div>
+    </section>
 
-.container{
-  width:92%;
-  max-width:var(--max-width);
-  margin:0 auto;
-}
+    <section class="grid-wrap" aria-live="polite">
+      <div id="productsGrid" class="grid"></div>
+    </section>
 
-/* Header */
-.header{
-  backdrop-filter: blur(6px);
-  position:sticky;
-  top:0;
-  z-index:30;
-  background: linear-gradient(180deg, rgba(4,6,12,0.6), rgba(4,6,12,0.35));
-  border-bottom:1px solid rgba(255,255,255,0.02);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 0;
-}
-.logo{
-  font-weight:700;
-  letter-spacing:0.6px;
-  text-decoration:none;
-  color:var(--accent);
-  font-size:1.15rem;
-}
-.logo .dot{color:var(--muted); font-weight:400; margin-left:2px}
+    <section id="subscribe" class="subscribe">
+      <h2>Get seasonal drops</h2>
+      <form id="subscribeForm" class="sub-form" autocomplete="off" novalidate>
+        <input type="email" id="email" placeholder="you@domain.com" required aria-label="Email address">
+        <button class="btn primary" type="submit">Subscribe</button>
+      </form>
+      <p class="fine">We never spam. Links are affiliate — helps keep SZN alive.</p>
+    </section>
+  </main>
 
-.nav{display:flex;gap:12px;align-items:center}
-.search{
-  background:var(--glass);
-  border:1px solid rgba(255,255,255,0.03);
-  padding:8px 12px;
-  border-radius:12px;
-  color:inherit;
-  min-width:220px;
-  outline:none;
-}
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> SZN.no — curated seasonal affiliate marketplace</small>
+      <div class="foot-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
 
-/* Hero */
-.hero{padding:44px 0 18px}
-.title{
-  margin:0;
-  font-size:clamp(1.3rem,2.8vw,2.2rem);
-  font-weight:700;
-  letter-spacing:-0.02em;
-}
-.subtitle{color:var(--muted); margin-top:8px}
-
-/* Controls */
-.controls{margin-top:14px;display:flex;gap:10px;align-items:center}
-select{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.04);
-  padding:8px 10px;
-  border-radius:10px;
-  color:inherit;
-  outline:none;
-}
-
-/* Buttons */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:12px;
-  border:0;
-  cursor:pointer;
-  background:transparent;
-  color:inherit;
-  font-weight:600;
-  text-decoration:none;
-}
-.btn.ghost{border:1px solid rgba(255,255,255,0.03)}
-.btn.primary{
-  background:linear-gradient(90deg,var(--accent),#5b21b6);
-  color:white;
-  box-shadow: 0 6px 24px rgba(124,58,237,0.12);
-}
-
-/* Grid */
-.grid-wrap{padding:18px 0 36px}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:var(--radius);
-  padding:16px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  border:1px solid rgba(255,255,255,0.02);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.6)}
-
-/* image placeholders */
-.thumbnail{
-  height:160px;
-  border-radius:12px;
-  background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.9rem;color:var(--muted);
-  overflow:hidden;
-}
-.meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.title-small{font-weight:600}
-.price{font-weight:700;color:var(--accent)}
-
-/* subscribe */
-.subscribe{background:rgba(255,255,255,0.02); padding:20px;border-radius:12px;margin:10px 0 50px}
-.sub-form{display:flex;gap:8px;flex-wrap:wrap}
-.sub-form input{flex:1;min-width:200px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
-
-/* footer */
-.footer{padding:20px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
-.foot-links{display:flex;gap:10px}
-
-/* responsive */
-@media (max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:560px){
-  .grid{grid-template-columns:1fr}
-  .header-inner{gap:8px}
-  .search{min-width:120px}
-}
+  <script src="scripts.js" defer></script>
+</body>
+</html>
