@@ -1,15 +1,11 @@
-// Minimal JS: renders a small set of seasonal affiliate products and lightweight UI interactions.
-// No external requests required — swap with your real product API/affiliate feed when ready.
-
 (() => {
   const products = [
     { 
       id:1, 
-      title:"Fur Wool Overcoat", 
+      title:"Fox Fur Wool Overcoat", 
       season:"winter", 
       price:"665 Kr", 
-      desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", 
-      imageAlt:"Fox Fur Wool Overcoat",
+      desc:"Elegant double-sided wool blend coat with fox fur details.",
       image:"https://ik.imagekit.io/Szn/Products/furcoat.jpg?updatedAt=1761338583934", 
       affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" 
     },
@@ -18,8 +14,7 @@
       title:"Sleeveless Knitted Dress", 
       season:"summer", 
       price:"82 Kr", 
-      desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", 
-      imageAlt:"Sleeveless Knitted Dress", 
+      desc:"Minimal bodycon knit with buttoned front and soft stretch.",
       image:"https://ik.imagekit.io/Szn/Products/summerdress.jpg?updatedAt=1761338583916", 
       affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" 
     },
@@ -28,8 +23,7 @@
       title:"ETJ 1975 Denim Midi Dress", 
       season:"spring", 
       price:"235 Kr", 
-      desc:"Slim fit, lapel neckline, side-zip detail.", 
-      imageAlt:"Denim Midi Dress",
+      desc:"Slim denim silhouette with lapel neckline and side zip.",
       image:"https://ik.imagekit.io/Szn/Products/blackdress.jpg?updatedAt=1761338583854", 
       affiliate:"https://s.click.aliexpress.com/e/_c3JXTBFN" 
     },
@@ -38,14 +32,12 @@
       title:"Merino Wool Wide-Leg Knit Pants", 
       season:"winter", 
       price:"168 Kr", 
-      desc:"Soft cashmere blend — effortless warmth for autumn and winter.", 
-      imageAlt:"Merino Wool Knit Pants", 
+      desc:"Soft merino blend — effortless warmth for colder seasons.",
       image:"https://ik.imagekit.io/Szn/Products/furlegs.jpg?updatedAt=1761338583953", 
       affiliate:"https://s.click.aliexpress.com/e/_c4OcaWHz" 
     }
   ];
 
-  // DOM refs
   const grid = document.getElementById('productsGrid');
   const seasonSelect = document.getElementById('seasonSelect');
   const searchInput = document.getElementById('search');
@@ -53,37 +45,31 @@
   const currentSeasonLabel = document.getElementById('currentSeasonLabel');
   const seasonToggle = document.getElementById('seasonToggle');
 
-  // init
   yearEl.textContent = new Date().getFullYear();
   renderProducts(products);
 
-  // render function
-  function renderProducts(list){
+  function renderProducts(list) {
     grid.innerHTML = '';
     if (!list.length) {
-      grid.innerHTML = `<div class="card"><div class="thumbnail">No results</div><div style="color:var(--muted)">Try a different season or search term.</div></div>`;
+      grid.innerHTML = `<div class="card"><div>No results</div></div>`;
       return;
     }
     list.forEach(p => {
       const el = document.createElement('article');
       el.className = 'card';
       el.innerHTML = `
-        <div class="thumbnail" role="img" aria-label="${escapeHtml(p.imageAlt)}">
-          ${p.image
-            ? `<img src="${p.image}" alt="${escapeHtml(p.imageAlt)}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`
-            : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="rgba(255,255,255,0.03)"/></svg>`}
+        <div class="thumbnail">
+          <img src="${p.image}" alt="${p.title}">
         </div>
-        <div>
-          <div class="meta">
-            <div>
-              <div class="title-small">${escapeHtml(p.title)}</div>
-              <div class="desc" style="color:var(--muted);font-size:0.9rem">${escapeHtml(p.desc)}</div>
-            </div>
-            <div class="price">${escapeHtml(p.price)}</div>
+        <div class="meta">
+          <div>
+            <div class="title-small">${p.title}</div>
+            <div class="desc" style="color:var(--muted);font-size:0.9rem">${p.desc}</div>
           </div>
+          <div class="price">${p.price}</div>
         </div>
-        <div style="display:flex;gap:8px;align-items:center">
-          <a class="btn" data-aff="${encodeURI(p.affiliate)}" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+          <a class="btn" href="${p.affiliate}" target="_blank">Buy</a>
           <button class="btn ghost preview" data-id="${p.id}">Preview</button>
         </div>
       `;
@@ -91,25 +77,29 @@
     });
   }
 
-  // simple filtering
-  function filterProducts(){
-    const season = seasonSelect.value;
+  function filterProducts() {
+    const season = seasonSelect.value.toLowerCase();
     const q = searchInput.value.trim().toLowerCase();
-    currentSeasonLabel.textContent = season === 'all' ? 'All' : capitalize(season);
-    let list = products.filter(p => {
-      const seasonMatch = (season === 'all') || (p.season.toLowerCase() === season) || (p.season === 'all');
-      const text = (p.title + ' ' + p.desc).toLowerCase();
-      const queryMatch = !q || text.includes(q);
-      return seasonMatch && queryMatch;
+    const list = products.filter(p => {
+      const seasonMatch = season === 'all' || p.season === season;
+      const textMatch = !q || (p.title + p.desc).toLowerCase().includes(q);
+      return seasonMatch && textMatch;
     });
+    currentSeasonLabel.textContent = season === 'all' ? 'All' : season[0].toUpperCase() + season.slice(1);
     renderProducts(list);
   }
 
-  // event listeners
-  seasonSelect.addEventListener('change', filterProducts);
-  searchInput.addEventListener('input', debounce(filterProducts, 220));
+  function debounce(fn, ms) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
 
-  // season toggle button (cycles seasons)
+  seasonSelect.addEventListener('change', filterProducts);
+  searchInput.addEventListener('input', debounce(filterProducts, 200));
+
   seasonToggle.addEventListener('click', () => {
     const order = ['all','spring','summer','autumn','winter'];
     const idx = order.indexOf(seasonSelect.value);
@@ -117,64 +107,37 @@
     filterProducts();
   });
 
-  // subscribe form (very lightweight)
   document.getElementById('subscribeForm').addEventListener('submit', e => {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
-    if(!email || !email.includes('@')) {
-      alert('Please enter a valid email.');
-      return;
-    }
-    document.getElementById('subscribeForm').innerHTML = `<div style="color:var(--muted)">Thanks — check your inbox for the welcome note.</div>`;
+    if (!email || !email.includes('@')) return alert('Please enter a valid email.');
+    e.target.innerHTML = `<div style="color:var(--muted)">Thanks — check your inbox soon.</div>`;
   });
 
-  // preview button (shows a lightweight toast)
   grid.addEventListener('click', e => {
     const btn = e.target.closest('.preview');
     if (!btn) return;
-    const id = Number(btn.dataset.id);
-    const p = products.find(x => x.id === id);
-    if(!p) return;
-    showToast(`${p.title} — ${p.price} — ${p.desc}`);
+    const p = products.find(x => x.id === Number(btn.dataset.id));
+    if (p) showToast(`${p.title} — ${p.price}`);
   });
 
-  // helpers
-  function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1) }
-  function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])) }
-
-  function debounce(fn, ms=200){
-    let t;
-    return (...args) => { clearTimeout(t); t = setTimeout(()=>fn(...args), ms); }
-  }
-
-  // tiny toast system
-  function showToast(text){
+  function showToast(text) {
     let toast = document.getElementById('sznToast');
-    if(!toast){
+    if (!toast) {
       toast = document.createElement('div');
       toast.id = 'sznToast';
       toast.style.position = 'fixed';
-      toast.style.right = '18px';
-      toast.style.bottom = '18px';
-      toast.style.background = 'linear-gradient(90deg, rgba(15,23,36,0.9), rgba(15,23,36,0.8))';
-      toast.style.border = '1px solid rgba(255,255,255,0.03)';
-      toast.style.padding = '12px 16px';
-      toast.style.borderRadius = '12px';
-      toast.style.boxShadow = '0 12px 40px rgba(2,6,23,0.6)';
-      toast.style.color = 'var(--muted)';
-      toast.style.maxWidth = '320px';
-      toast.style.fontSize = '0.95rem';
-      toast.style.zIndex = 60;
-      toast.style.backdropFilter = 'blur(6px)';
+      toast.style.bottom = '20px';
+      toast.style.right = '20px';
+      toast.style.background = 'rgba(0,0,0,0.7)';
+      toast.style.padding = '10px 16px';
+      toast.style.borderRadius = '8px';
+      toast.style.color = '#fff';
       document.body.appendChild(toast);
     }
     toast.textContent = text;
-    toast.style.opacity = '1';
+    toast.style.opacity = 1;
     clearTimeout(toast._t);
-    toast._t = setTimeout(()=> { toast.style.opacity = '0'; }, 3800);
+    toast._t = setTimeout(() => toast.style.opacity = 0, 3000);
   }
-
-  // initial label sync
-  currentSeasonLabel.textContent = 'All';
-
 })();
