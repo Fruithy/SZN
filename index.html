@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SZN — Minimal Fashion Edit</title>
+  <title>SZN — Curated Fashion Edits</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>SZN</h1>
-    <p class="tagline">Curated minimal fashion — seasonally selected.</p>
+  <header class="header">
+    <h1 class="logo">SZN<span class="dot">.</span></h1>
+    <p class="tagline">Seasonal fashion, curated for modern minimalists.</p>
   </header>
 
   <main>
     <section class="controls">
-      <input id="search" type="text" placeholder="Search items..." />
+      <input id="search" type="text" placeholder="Search styles..." />
       <select id="seasonSelect">
         <option value="all">All seasons</option>
         <option value="spring">Spring</option>
@@ -27,9 +27,9 @@
     <section id="productsGrid" class="grid"></section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> SZN. Curated fashion edits with affiliate links.</p>
-    <p class="disclaimer">We may earn a small commission from qualifying purchases — at no extra cost to you.</p>
+  <footer class="footer">
+    <p>© <span id="year"></span> SZN — The curated fashion edit.</p>
+    <p class="disclaimer">This site contains affiliate links. We may earn a small commission on qualifying purchases.</p>
   </footer>
 
   <script src="scripts.js"></script>
