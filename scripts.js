@@ -62,14 +62,12 @@
           <img src="${p.image}" alt="${p.imageAlt}" loading="lazy">
         </div>
         <div class="meta">
-          <div>
-            <div class="title-small">${p.title}</div>
-            <div class="desc">${p.desc}</div>
-          </div>
+          <div class="title-small">${p.title}</div>
+          <div class="desc">${p.desc}</div>
           <div class="price">${p.price}</div>
         </div>
         <div class="actions">
-          <a class="btn" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
+          <a class="btn" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Shop Now</a>
         </div>
       `;
       grid.appendChild(el);
@@ -89,6 +87,5 @@
 
   seasonSelect.addEventListener("change", filterProducts);
   searchInput.addEventListener("input", filterProducts);
-
   renderProducts(products);
 })();
