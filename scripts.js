@@ -4,7 +4,7 @@
 (() => {
   const products = [
     { id:1, title:"Tossy Fox Fur Wool Overcoat", season:"winter", price:"Kr 665", desc:"Women's Short Coat Office Lady Elegant Double-sided Woolen Coat", imageAlt:"", affiliate:"https://s.click.aliexpress.com/e/_c33NrCSB" },
-    { id:2, title:"Sleeveless Knitted Bodycon Dress", season:"summer", price:"Kr 82", desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", imageAlt:"", affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" },
+    { id:2, title:"Sleeveless Knitted Bodycon Dress", season:"summer", price:"Kr 82", desc:"Women Casual Buttons Sleeveless Knitted Bodycon Dress", image:"https://ae01.alicdn.com/kf/S12345abcXYZ/sleeveless-knitted-dress.jpg", affiliate:"https://s.click.aliexpress.com/e/_c3diOdP5" },
     { id:3, title:"Autumn Lantern Set", season:"autumn", price:"€29", desc:"Battery-powered warm glow.", imageAlt:"Lanterns", affiliate:"https://example.com/aff?prod=3" },
     { id:4, title:"Spring Herb Kit", season:"spring", price:"€15", desc:"Grow basil, thyme & parsley.", imageAlt:"Herb kit", affiliate:"https://example.com/aff?prod=4" },
     { id:5, title:"All-Season Insulated Bottle", season:"all", price:"€24", desc:"Keeps drinks hot or cold.", imageAlt:"Bottle", affiliate:"https://example.com/aff?prod=5" },
