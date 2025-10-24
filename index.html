@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SZN — Seasonal Finds</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SZN — Minimal Fashion Edit</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>SZN</h1>
-    <p class="tagline">Curated seasonal essentials</p>
+    <p class="tagline">Curated minimal fashion — seasonally selected.</p>
+  </header>
 
-    <div class="controls">
+  <main>
+    <section class="controls">
+      <input id="search" type="text" placeholder="Search items..." />
       <select id="seasonSelect">
-        <option value="all">All</option>
+        <option value="all">All seasons</option>
         <option value="spring">Spring</option>
         <option value="summer">Summer</option>
         <option value="autumn">Autumn</option>
         <option value="winter">Winter</option>
       </select>
-      <input id="search" placeholder="Search…" />
-      <button id="seasonToggle">⟳</button>
-      <span id="currentSeasonLabel"></span>
-    </div>
-  </header>
+    </section>
 
-  <main>
-    <div id="productsGrid" class="grid"></div>
+    <section id="productsGrid" class="grid"></section>
   </main>
 
   <footer>
-    <form id="subscribeForm">
-      <input id="email" type="email" placeholder="Subscribe for drops" required />
-      <button type="submit">→</button>
-    </form>
-    <p>© <span id="year"></span> SZN</p>
+    <p>© <span id="year"></span> SZN. Curated fashion edits with affiliate links.</p>
+    <p class="disclaimer">We may earn a small commission from qualifying purchases — at no extra cost to you.</p>
   </footer>
 
   <script src="scripts.js"></script>
