@@ -25,35 +25,38 @@
 
   // render function
   function renderProducts(list){
-    grid.innerHTML = '';
-    if (!list.length) {
-      grid.innerHTML = `<div class="card"><div class="thumbnail">No results</div><div style="color:var(--muted)">Try a different season or search term.</div></div>`;
-      return;
-    }
-    list.forEach(p => {
-      const el = document.createElement('article');
-      el.className = 'card';
-      el.innerHTML = `
-        <div class="thumbnail" role="img" aria-label="${escapeHtml(p.imageAlt)}">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="rgba(255,255,255,0.03)"/></svg>
-        </div>
-        <div>
-          <div class="meta">
-            <div>
-              <div class="title-small">${escapeHtml(p.title)}</div>
-              <div class="desc" style="color:var(--muted);font-size:0.9rem">${escapeHtml(p.desc)}</div>
-            </div>
-            <div class="price">${escapeHtml(p.price)}</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:8px;align-items:center">
-          <a class="btn" data-aff="${encodeURI(p.affiliate)}" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
-          <button class="btn ghost preview" data-id="${p.id}">Preview</button>
-        </div>
-      `;
-      grid.appendChild(el);
-    });
+  grid.innerHTML = '';
+  if (!list.length) {
+    grid.innerHTML = `<div class="card"><div class="thumbnail">No results</div><div style="color:var(--muted)">Try a different season or search term.</div></div>`;
+    return;
   }
+  list.forEach(p => {
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `
+      <div class="thumbnail" role="img" aria-label="${escapeHtml(p.imageAlt)}">
+        ${p.image
+          ? `<img src="${p.image}" alt="${escapeHtml(p.imageAlt)}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`
+          : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="rgba(255,255,255,0.03)"/></svg>`}
+      </div>
+      <div>
+        <div class="meta">
+          <div>
+            <div class="title-small">${escapeHtml(p.title)}</div>
+            <div class="desc" style="color:var(--muted);font-size:0.9rem">${escapeHtml(p.desc)}</div>
+          </div>
+          <div class="price">${escapeHtml(p.price)}</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn" data-aff="${encodeURI(p.affiliate)}" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Buy</a>
+        <button class="btn ghost preview" data-id="${p.id}">Preview</button>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
 
   // simple filtering
   function filterProducts(){
