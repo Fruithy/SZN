@@ -16,7 +16,7 @@
       season: "summer",
       price: "82 Kr",
       desc: "Casual buttoned knit — lightweight & minimal.",
-      image: "https://ik.imagekit.io/Szn/Products/summerdress.jpg?updatedAt=1761338583916",
+      image: "https://ae-pic-a1.aliexpress-media.com/kf/S9deffab987804448aa1fa01fd5638beeZ.jpg_220x220q75.jpg_.avif",
       imageAlt: "Sleeveless Knitted Dress",
       affiliate: "https://s.click.aliexpress.com/e/_c3diOdP5"
     },
@@ -26,7 +26,7 @@
       season: "spring",
       price: "235 Kr",
       desc: "Slim fit denim, lapel neckline, side zip.",
-      image: "https://ik.imagekit.io/Szn/Products/blackdress.jpg?updatedAt=1761338583854",
+      image: "https://ae-pic-a1.aliexpress-media.com/kf/S699c6887bb3042c5b28360b84b9f2d10e.jpg_220x220q75.jpg_.avif",
       imageAlt: "ETJ Denim Midi Dress",
       affiliate: "https://s.click.aliexpress.com/e/_c3JXTBFN"
     },
@@ -36,7 +36,7 @@
       season: "winter",
       price: "168 Kr",
       desc: "Soft merino blend — effortless warmth.",
-      image: "https://ik.imagekit.io/Szn/Products/furlegs.jpg?updatedAt=1761338583953",
+      image: "https://ae-pic-a1.aliexpress-media.com/kf/S8bdfd3c326ae46cca92264ca39d2bd9dv.jpg_220x220q75.jpg_.avif",
       imageAlt: "Merino Knit Pants",
       affiliate: "https://s.click.aliexpress.com/e/_c4OcaWHz"
     }
