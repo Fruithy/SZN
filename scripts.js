@@ -1,91 +1,10 @@
-(() => {
-  const products = [
-    {
-      id: 1,
-      title: "Fox Fur Wool Overcoat",
-      season: "winter",
-      price: "665 Kr",
-      desc: "Double-sided wool — structured yet soft.",
-      image: "https://ik.imagekit.io/Szn/Products/Products/furcoat.jpg?updatedAt=1761341834088",
-      imageAlt: "Fox Fur Wool Overcoat",
-      affiliate: "https://s.click.aliexpress.com/e/_c33NrCSB"
-    },
-    {
-      id: 2,
-      title: "Sleeveless Knitted Dress",
-      season: "summer",
-      price: "82 Kr",
-      desc: "Casual buttoned knit — lightweight & minimal.",
-      image: "https://ik.imagekit.io/Szn/Products/Products/summerdress.jpg?updatedAt=1761341834067",
-      imageAlt: "Sleeveless Knitted Dress",
-      affiliate: "https://s.click.aliexpress.com/e/_c3diOdP5"
-    },
-    {
-      id: 3,
-      title: "ETJ 1975 Denim Midi Dress",
-      season: "spring",
-      price: "235 Kr",
-      desc: "Slim fit denim, lapel neckline, side zip.",
-      image: "https://ik.imagekit.io/Szn/Products/Products/blackdress.jpg?updatedAt=1761341833848",
-      imageAlt: "ETJ Denim Midi Dress",
-      affiliate: "https://s.click.aliexpress.com/e/_c3JXTBFN"
-    },
-    {
-      id: 4,
-      title: "Merino Wool Wide-Leg Knit Pants",
-      season: "winter",
-      price: "168 Kr",
-      desc: "Soft merino blend — effortless warmth.",
-      image: "https://ik.imagekit.io/Szn/Products/Products/furlegs.jpg?updatedAt=1761341834083",
-      imageAlt: "Merino Knit Pants",
-      affiliate: "https://s.click.aliexpress.com/e/_c4OcaWHz"
-    }
-  ];
+// Custom cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
 
-  const grid = document.getElementById("productsGrid");
-  const seasonSelect = document.getElementById("seasonSelect");
-  const searchInput = document.getElementById("search");
-  const yearEl = document.getElementById("year");
-  yearEl.textContent = new Date().getFullYear();
-
-  function renderProducts(list) {
-    grid.innerHTML = "";
-    if (!list.length) {
-      grid.innerHTML = `<p style="text-align:center;color:var(--muted)">No items found.</p>`;
-      return;
-    }
-    list.forEach((p) => {
-      const el = document.createElement("article");
-      el.className = "card";
-      el.innerHTML = `
-        <div class="thumbnail">
-          <img src="${p.image}" alt="${p.imageAlt}" loading="lazy">
-        </div>
-        <div class="meta">
-          <div class="title-small">${p.title}</div>
-          <div class="desc">${p.desc}</div>
-          <div class="price">${p.price}</div>
-        </div>
-        <div class="actions">
-          <a class="btn" href="${p.affiliate}" target="_blank" rel="noopener noreferrer">Shop Now</a>
-        </div>
-      `;
-      grid.appendChild(el);
-    });
-  }
-
-  function filterProducts() {
-    const season = seasonSelect.value;
-    const q = searchInput.value.trim().toLowerCase();
-    const list = products.filter((p) => {
-      const seasonMatch = season === "all" || p.season === season || p.season === "all";
-      const textMatch = (p.title + " " + p.desc).toLowerCase().includes(q);
-      return seasonMatch && textMatch;
-    });
-    renderProducts(list);
-  }
-
-  seasonSelect.addEventListener("change", filterProducts);
-  searchInput.addEventListener("input", filterProducts);
-  renderProducts(products);
-})();
+// Contact form demo
+const form = document.getElementById('contactForm');
+const msg = document.getElementById
