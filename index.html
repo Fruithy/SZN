@@ -1,172 +1,122 @@
 <!doctype html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SZN Studio — Digital Goods & Branding</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SZN — Branding Studio</title>
+  <meta name="description" content="SZN — Branding studio som hjelper skapere og bedrifter med å bli synlige og nå riktig målgruppe." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <meta name="description" content="SZN Studio — branding, UI kits, templates and digital assets crafted for creators and founders." />
-</head>
-<body>
-  <div class="cursor" id="cursor"></div>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <header class="topbar">
-    <a class="logo" href="#">SZN<span class="dot">.</span><span class="no">no</span></a>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#products">Products</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact" class="cta">Let's build</a>
-    </nav>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loaded">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">szn</a>
+      <nav class="nav" id="nav">
+        <a href="#tjenester">Tjenester</a>
+        <a href="#arbeid">Portefølje</a>
+        <a href="#priser">Priser</a>
+        <a href="#kontakt" class="cta">Kontakt</a>
+      </nav>
+      <div class="header-buttons">
+        <button id="darkToggle" aria-label="Bytt tema">🌓</button>
+        <button id="navToggle" class="nav-toggle" aria-label="Åpne meny">☰</button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <h1>Branding & digital assets that fit the season — and sell.</h1>
-        <p class="lead">UI kits, pitch decks, brand kits, templates, and identity systems — ready-made and handcrafted for fast launches.</p>
-        <div class="hero-actions">
-          <a href="#products" class="btn primary">Browse products</a>
-          <a href="#work" class="btn ghost">See case studies</a>
-        </div>
-        <ul class="features">
-          <li>Ready-to-use design systems</li>
-          <li>Commercial license included</li>
-          <li>Nordic aesthetic & clean code</li>
-        </ul>
-      </div>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content fade-in">
+          <p class="eyebrow">Branding · Synlighet · Vekst</p>
+          <h1>Vi bygger merkevarer som blir funnet — <span class="accent">for skapere & små bedrifter.</span></h1>
+          <p class="hero-lead">SZN kombinerer strategi, visuelt design og vekstfilosofi for å hjelpe deg finne riktig publikum og selge mer med mindre støy.</p>
 
-      <div class="hero-preview" aria-hidden="true">
-        <div class="mockup">
-          <div class="screen screen-1"></div>
-          <div class="screen screen-2"></div>
-          <div class="badge">New — Autumn SZN Kit</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="products" class="products">
-      <h2>Featured digital goods</h2>
-      <p class="sub">Plug-and-play packages for startups, creators, and agencies.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="tag">UI Kit</div>
-          <h3>Autumn SZN UI Kit</h3>
-          <p>Complete Figma UI library + React components. Includes typography, tokens and responsive layouts.</p>
-          <div class="meta">From <strong>€49</strong></div>
-          <div class="card-actions"><button class="btn small" data-buy="autumn-ui">Buy</button></div>
-        </article>
-
-        <article class="card">
-          <div class="tag">Brand Kit</div>
-          <h3>Nordic Identity Pack</h3>
-          <p>Logo variations, color system, icon set and brand guidelines — export-ready for marketing and web.</p>
-          <div class="meta">From <strong>€79</strong></div>
-          <div class="card-actions"><button class="btn small" data-buy="nordic-brand">Buy</button></div>
-        </article>
-
-        <article class="card">
-          <div class="tag">Templates</div>
-          <h3>Pitch Deck Template</h3>
-          <p>Investor-ready deck with analytics slides, financials and narrative structure — editable in Figma & PowerPoint.</p>
-          <div class="meta">From <strong>€29</strong></div>
-          <div class="card-actions"><button class="btn small" data-buy="pitch-deck">Buy</button></div>
-        </article>
-
-        <article class="card">
-          <div class="tag">Bundle</div>
-          <h3>Starter Studio Bundle</h3>
-          <p>Everything you need to launch: UI kit + Brand pack + Deck. Bundled pricing for small teams.</p>
-          <div class="meta">From <strong>€129</strong></div>
-          <div class="card-actions"><button class="btn small" data-buy="bundle">Buy</button></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="work" class="case-studies">
-      <h2>Selected case studies</h2>
-      <div class="cases">
-        <article class="case">
-          <div class="visual"></div>
-          <div class="case-body">
-            <h3>Framn — Rebrand & launch</h3>
-            <p>Complete identity + landing templates. Result: 3x conversion on pre-launch signups.</p>
-            <a class="link" href="#">Read story →</a>
+          <div class="hero-cta">
+            <a href="#priser" class="btn-primary">Se priser (NOK)</a>
+            <a href="#arbeid" class="btn-ghost">Se portefølje</a>
           </div>
-        </article>
+        </div>
+      </div>
+    </section>
 
-        <article class="case">
-          <div class="visual alt"></div>
-          <div class="case-body">
-            <h3>Rooftop — Product UI</h3>
-            <p>Design system for a SaaS analytics product — saved dev time with ready components and tokens.</p>
-            <a class="link" href="#">Read story →</a>
+    <!-- TJENESTER -->
+    <section class="section" id="tjenester">
+      <div class="container fade-in">
+        <h2>Hva vi gjør</h2>
+        <p class="lede">Små team. Store idéer. Vi tilbyr helhetlige pakker for alle steg i merkevarereisen.</p>
+
+        <div class="cards-grid">
+          <article class="card"><h3>Strategi</h3><p>Posisjonering, målgruppeanalyse, budskapsarkitektur og kommunikasjon.</p></article>
+          <article class="card"><h3>Visuell identitet</h3><p>Logo, fargesystem, typografi og designmanual.</p></article>
+          <article class="card"><h3>Innholdsplan</h3><p>Kreativ strategi, kampanjer og veksttesting.</p></article>
+          <article class="card"><h3>Lansering</h3><p>Go-to-market, nettsider og kampanjestøtte.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRISER -->
+    <section class="section" id="priser">
+      <div class="container fade-in">
+        <h2>Priser</h2>
+        <p class="lede">Enkle, ærlige priser i NOK.</p>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Start</h3>
+            <p class="price"><span class="amount" data-engang="5500" data-maand="700">5 500</span> NOK</p>
+            <ul><li>Logo & profil</li><li>Mini workshop</li><li>1 revisjon</li></ul>
           </div>
-        </article>
-      </div>
-    </section>
 
-    <section id="pricing" class="pricing">
-      <h2>Pricing snapshots</h2>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h4>Single product</h4>
-          <div class="price">€29+</div>
-          <ul><li>Digital download</li><li>Commercial license</li><li>Email support</li></ul>
-        </div>
-        <div class="price-card featured">
-          <h4>Studio Bundle</h4>
-          <div class="price">€129</div>
-          <ul><li>Everything in single</li><li>Priority support</li><li>1 customization pass</li></ul>
-        </div>
-        <div class="price-card">
-          <h4>Custom branding</h4>
-          <div class="price">From €999</div>
-          <ul><li>Full brand system</li><li>Design handoff</li><li>Delivery in 2–4 weeks</li></ul>
+          <div class="price-card featured">
+            <h3>Growth</h3>
+            <p class="price"><span class="amount" data-engang="18000" data-maand="4500">18 000</span> NOK</p>
+            <ul><li>Full identitet</li><li>Strategi & kampanjer</li><li>Oppfølging</li></ul>
+          </div>
+
+          <div class="price-card">
+            <h3>Månedlig</h3>
+            <p class="price"><span class="amount" data-engang="12000" data-maand="8000">12 000</span> NOK / mnd</p>
+            <ul><li>Kampanjer</li><li>Innholdsstøtte</li><li>Analyser</li></ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="contact-inner">
+    <!-- KONTAKT -->
+    <section class="section" id="kontakt">
+      <div class="container contact-grid fade-in">
         <div>
-          <h2>Start a project</h2>
-          <p>Tell us what you need and we'll reply within 1–2 business days.</p>
-          <form id="contactForm">
-            <div class="row">
-              <input name="name" placeholder="Your name" required>
-              <input name="email" placeholder="Email" type="email" required>
-            </div>
-            <textarea name="message" placeholder="Tell us about your project" required></textarea>
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Send inquiry</button>
-              <button type="button" id="downloadDemo" class="btn ghost">Download demo kit</button>
-            </div>
-            <div id="formMsg" class="form-msg" aria-live="polite"></div>
-          </form>
+          <h2>Kontakt oss</h2>
+          <p class="lede">Fortell kort om prosjektet ditt — vi svarer innen 48 timer.</p>
+          <ul class="contact-list">
+            <li><strong>E-post:</strong> hello@szn.no</li>
+            <li><strong>Lokasjon:</strong> Oslo, Norge</li>
+          </ul>
         </div>
 
-        <aside class="newsletter">
-          <h3>Stay in the loop</h3>
-          <p>Get product drops and free assets each SZN.</p>
-          <div class="subscribe">
-            <input id="newsletterEmail" placeholder="Your email" type="email">
-            <button id="subscribeBtn" class="btn small">Subscribe</button>
-          </div>
-          <p class="small">We send <strong>1 email / month</strong>. No spam.</p>
-        </aside>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>Navn <input type="text" name="name" required></label>
+          <label>E-post <input type="email" name="email" required></label>
+          <label>Melding <textarea name="message" rows="5" required></textarea></label>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div>© <span id="year"></span> SZN Studio — Built with ♥ in Norway</div>
-    <div class="foot-links"><a href="#privacy">Privacy</a> <a href="#terms">Terms</a></div>
+    <div class="container">
+      <p>© SZN — Branding Studio | Oslo, Norge</p>
+    </div>
   </footer>
 
-  <script src="scripts.js" defer></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
