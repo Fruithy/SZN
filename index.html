@@ -1,37 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SZN — Curated Fashion Edits</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SZN Studio — Digital Goods & Branding</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="SZN Studio — branding, UI kits, templates and digital assets crafted for creators and founders." />
 </head>
 <body>
-  <header class="header">
-    <h1 class="logo">SZN<span class="dot">.</span></h1>
-    <p class="tagline">Seasonal fashion, curated for modern minimalists.</p>
+  <div class="cursor" id="cursor"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#">SZN<span class="dot">.</span><span class="no">no</span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#products">Products</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="cta">Let's build</a>
+    </nav>
   </header>
 
   <main>
-    <section class="controls">
-      <input id="search" type="text" placeholder="Search styles..." />
-      <select id="seasonSelect">
-        <option value="all">All seasons</option>
-        <option value="spring">Spring</option>
-        <option value="summer">Summer</option>
-        <option value="autumn">Autumn</option>
-        <option value="winter">Winter</option>
-      </select>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Branding & digital assets that fit the season — and sell.</h1>
+        <p class="lead">UI kits, pitch decks, brand kits, templates, and identity systems — ready-made and handcrafted for fast launches.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn primary">Browse products</a>
+          <a href="#work" class="btn ghost">See case studies</a>
+        </div>
+        <ul class="features">
+          <li>Ready-to-use design systems</li>
+          <li>Commercial license included</li>
+          <li>Nordic aesthetic & clean code</li>
+        </ul>
+      </div>
+
+      <div class="hero-preview" aria-hidden="true">
+        <div class="mockup">
+          <div class="screen screen-1"></div>
+          <div class="screen screen-2"></div>
+          <div class="badge">New — Autumn SZN Kit</div>
+        </div>
+      </div>
     </section>
 
-    <section id="productsGrid" class="grid"></section>
+    <section id="products" class="products">
+      <h2>Featured digital goods</h2>
+      <p class="sub">Plug-and-play packages for startups, creators, and agencies.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="tag">UI Kit</div>
+          <h3>Autumn SZN UI Kit</h3>
+          <p>Complete Figma UI library + React components. Includes typography, tokens and responsive layouts.</p>
+          <div class="meta">From <strong>€49</strong></div>
+          <div class="card-actions"><button class="btn small" data-buy="autumn-ui">Buy</button></div>
+        </article>
+
+        <article class="card">
+          <div class="tag">Brand Kit</div>
+          <h3>Nordic Identity Pack</h3>
+          <p>Logo variations, color system, icon set and brand guidelines — export-ready for marketing and web.</p>
+          <div class="meta">From <strong>€79</strong></div>
+          <div class="card-actions"><button class="btn small" data-buy="nordic-brand">Buy</button></div>
+        </article>
+
+        <article class="card">
+          <div class="tag">Templates</div>
+          <h3>Pitch Deck Template</h3>
+          <p>Investor-ready deck with analytics slides, financials and narrative structure — editable in Figma & PowerPoint.</p>
+          <div class="meta">From <strong>€29</strong></div>
+          <div class="card-actions"><button class="btn small" data-buy="pitch-deck">Buy</button></div>
+        </article>
+
+        <article class="card">
+          <div class="tag">Bundle</div>
+          <h3>Starter Studio Bundle</h3>
+          <p>Everything you need to launch: UI kit + Brand pack + Deck. Bundled pricing for small teams.</p>
+          <div class="meta">From <strong>€129</strong></div>
+          <div class="card-actions"><button class="btn small" data-buy="bundle">Buy</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="case-studies">
+      <h2>Selected case studies</h2>
+      <div class="cases">
+        <article class="case">
+          <div class="visual"></div>
+          <div class="case-body">
+            <h3>Framn — Rebrand & launch</h3>
+            <p>Complete identity + landing templates. Result: 3x conversion on pre-launch signups.</p>
+            <a class="link" href="#">Read story →</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="visual alt"></div>
+          <div class="case-body">
+            <h3>Rooftop — Product UI</h3>
+            <p>Design system for a SaaS analytics product — saved dev time with ready components and tokens.</p>
+            <a class="link" href="#">Read story →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h2>Pricing snapshots</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h4>Single product</h4>
+          <div class="price">€29+</div>
+          <ul><li>Digital download</li><li>Commercial license</li><li>Email support</li></ul>
+        </div>
+        <div class="price-card featured">
+          <h4>Studio Bundle</h4>
+          <div class="price">€129</div>
+          <ul><li>Everything in single</li><li>Priority support</li><li>1 customization pass</li></ul>
+        </div>
+        <div class="price-card">
+          <h4>Custom branding</h4>
+          <div class="price">From €999</div>
+          <ul><li>Full brand system</li><li>Design handoff</li><li>Delivery in 2–4 weeks</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-inner">
+        <div>
+          <h2>Start a project</h2>
+          <p>Tell us what you need and we'll reply within 1–2 business days.</p>
+          <form id="contactForm">
+            <div class="row">
+              <input name="name" placeholder="Your name" required>
+              <input name="email" placeholder="Email" type="email" required>
+            </div>
+            <textarea name="message" placeholder="Tell us about your project" required></textarea>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send inquiry</button>
+              <button type="button" id="downloadDemo" class="btn ghost">Download demo kit</button>
+            </div>
+            <div id="formMsg" class="form-msg" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <aside class="newsletter">
+          <h3>Stay in the loop</h3>
+          <p>Get product drops and free assets each SZN.</p>
+          <div class="subscribe">
+            <input id="newsletterEmail" placeholder="Your email" type="email">
+            <button id="subscribeBtn" class="btn small">Subscribe</button>
+          </div>
+          <p class="small">We send <strong>1 email / month</strong>. No spam.</p>
+        </aside>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> SZN — The curated fashion edit.</p>
-    <p class="disclaimer">This site contains affiliate links. We may earn a small commission on qualifying purchases.</p>
+  <footer class="site-footer">
+    <div>© <span id="year"></span> SZN Studio — Built with ♥ in Norway</div>
+    <div class="foot-links"><a href="#privacy">Privacy</a> <a href="#terms">Terms</a></div>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
