@@ -131,6 +131,19 @@ body{
 /* Footer */
 .footer{padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:36px}
 .footer-inner{display:flex;justify-content:space-between;color:var(--muted)}
+.social-link {
+  background: linear-gradient(90deg, #ff0066, #ffcc00, #00ffff);
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+}
+
+.social-link:hover {
+  background-position: 100% center;
+}
+
 
 /* Animations */
 @keyframes floatUp{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
