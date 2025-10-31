@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const year = document.getElementById('year');
   if(year) year.textContent = new Date().getFullYear();
 
-  // Toggle mobile menu
+  // Mobile menu toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if(navToggle){
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // Keyword animation
   const cloud = document.getElementById('keywordCloud');
   if(cloud){
-    Array.from(cloud.children).forEach((el,i)=>{
+    Array.from(cloud.children).forEach((el)=>{
       el.addEventListener('mouseenter',()=>{
         el.style.transform='translateY(-8px) scale(1.05)';
       });
@@ -39,26 +39,31 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // Contact form
+  // ✅ Formspree async submission
   const form = document.getElementById('leadForm');
   const status = document.getElementById('formStatus');
-  const clearBtn = document.getElementById('clearBtn');
-
-  if(clearBtn){
-    clearBtn.addEventListener('click',()=>{
-      form.reset();
-      status.textContent='';
-    });
-  }
-
+  
   if(form){
-    form.addEventListener('submit', e=>{
+    form.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      status.textContent='Sender...';
-      setTimeout(()=>{
-        status.textContent='Takk! Vi har mottatt meldingen din.';
-        form.reset();
-      },1000);
+      status.textContent = 'Sender...';
+
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if(response.ok){
+          status.textContent = 'Takk! Vi har mottatt meldingen din.';
+          form.reset();
+        } else {
+          status.textContent = 'Oops! Noe gikk galt. Prøv igjen.';
+        }
+      } catch {
+        status.textContent = 'Nettverksfeil. Vennligst prøv igjen.';
+      }
     });
   }
 });
