@@ -3,12 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SZN.NO — This is your branding SZN.</title>
-  <meta name="description" content="SZN.NO — Strategisk, minimalistisk merkevarebygging. Vi skaper identiteter og digitale opplevelser som konverterer." />
+
+  <title>SZN.NO — Merkevarebyrå i Oslo | Strategisk design & visuell identitet</title>
+  <meta name="description" content="SZN.NO er et kreativt merkevarebyrå i Oslo. Vi hjelper ambisiøse bedrifter med strategi, visuell identitet og digital design som skiller seg ut og konverterer." />
+  <link rel="canonical" href="https://szn.no/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://szn.no/" />
+  <meta property="og:title" content="SZN.NO — Merkevarebyrå i Oslo" />
+  <meta property="og:description" content="Strategisk merkevarebygging, visuell identitet og digital design — skapt i Norge." />
+  <meta property="og:image" content="https://szn.no/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SZN.NO — Merkevarebyrå i Oslo" />
+  <meta name="twitter:description" content="SZN.NO designer og bygger moderne merkevarer for vekst." />
+  <meta name="twitter:image" content="https://szn.no/og-image.jpg" />
+
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SZN.NO",
+    "url": "https://szn.no",
+    "logo": "https://szn.no/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/szn-no",
+      "https://www.instagram.com/szn.no"
+    ],
+    "description": "SZN.NO er et norsk merkevarebyrå i Oslo som spesialiserer seg på strategi, design og digital identitet."
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Optional analytics -->
+  <script defer data-domain="szn.no" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <header class="nav">
@@ -47,6 +82,14 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- SEO keyword intro -->
+    <section class="about-intro container">
+      <p>
+        <strong>SZN.NO</strong> er et <strong>merkevarebyrå i Oslo</strong> som kombinerer strategi, design og digital identitet. 
+        Vi hjelper selskaper i hele Norge med å bygge tydelige, tidløse og effektive merkevarer.
+      </p>
     </section>
 
     <section id="approach" class="approach">
@@ -89,11 +132,9 @@
         <div>
           <h2>Alltid relevant. Alltid SZN.</h2>
           <p class="muted">Fortell oss kort om prosjektet — mål, tidsramme og budsjett. Vi svarer innen 48 timer.</p>
-          <ul class="contact-list">
-          </ul>
         </div>
 
-        <!-- ✅ FORM: Formspree integrated, styled with SZN design -->
+        <!-- ✅ Formspree integration -->
         <form 
           id="leadForm" 
           class="lead-form" 
@@ -119,6 +160,23 @@
           <p id="formStatus" class="form-status" aria-live="polite"></p>
         </form>
       </div>
+    </section>
+
+    <!-- SEO-friendly FAQ -->
+    <section class="faq container">
+      <h2>Vanlige spørsmål om merkevarebygging</h2>
+      <details>
+        <summary>Hva gjør et merkevarebyrå som SZN.NO?</summary>
+        <p>Vi hjelper bedrifter med strategi, visuell identitet og digital design for å skape helhetlige merkevarer som konverterer.</p>
+      </details>
+      <details>
+        <summary>Hvor holder dere til?</summary>
+        <p>Vi holder til i Oslo, men jobber med kunder over hele Norge og internasjonalt.</p>
+      </details>
+      <details>
+        <summary>Tilbyr dere komplette nettsider?</summary>
+        <p>Ja, vi designer og utvikler nettsider som er optimalisert for både brukeropplevelse og SEO.</p>
+      </details>
     </section>
   </main>
 
