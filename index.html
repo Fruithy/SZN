@@ -4,11 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SZN.NO — Brand Atelier</title>
-  <meta name="description" content="SZN.NO — Minimal, strategisk og visuelt kraftfull merkevarebygging. Vi skaper digitale opplevelser som fanger oppmerksomhet." />
+  <meta name="description" content="SZN.NO — Strategisk, minimalistisk merkevarebygging. Vi skaper identiteter og digitale opplevelser som konverterer." />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -41,7 +40,6 @@
             <li><strong>40%</strong><span>Bedre konvertering</span></li>
           </ul>
         </div>
-
         <div class="hero-visual">
           <div class="card">
             <div class="card-top">SZN • Identitet</div>
@@ -96,11 +94,16 @@
           <h2>La oss bygge din SZN</h2>
           <p class="muted">Fortell oss kort om prosjektet — mål, tidsramme og budsjett. Vi svarer innen 48 timer.</p>
           <ul class="contact-list">
-            <li><strong>E-post</strong> Kontakt@szn.no</li>
           </ul>
         </div>
 
-        <form id="leadForm" class="lead-form" autocomplete="on">
+        <!-- ✅ FORM: Formspree integrated, styled with SZN design -->
+        <form 
+          id="leadForm" 
+          class="lead-form" 
+          action="https://formspree.io/f/xjkprpbz" 
+          method="POST"
+        >
           <label>
             Firma
             <input type="text" name="company" required>
@@ -111,11 +114,11 @@
           </label>
           <label>
             Kort beskrivelse
-            <textarea name="brief" rows="4" placeholder="Hva ønsker du å skape?"></textarea>
+            <textarea name="message" rows="4" placeholder="Hva ønsker du å skape?" required></textarea>
           </label>
           <div class="form-actions">
             <button class="btn primary" type="submit">Send</button>
-            <button class="btn ghost" type="button" id="clearBtn">Tøm</button>
+            <button class="btn ghost" type="reset">Tøm</button>
           </div>
           <p id="formStatus" class="form-status" aria-live="polite"></p>
         </form>
