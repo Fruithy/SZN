@@ -13,16 +13,15 @@
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
 <div class="cursor"></div>
 
 <!-- HEADER -->
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="logo">SZN</a>
+    <a href="#" class="logo">SZN</a>
     <nav class="site-nav">
-      <a href="priser">Priser</a>
-      <a href="book">Book</a>
+      <a href="#priser-section">Priser</a>
+      <a href="#" id="bookBtn">Book</a>
       <a href="https://instagram.com/szn.no" target="_blank">Instagram</a>
     </nav>
   </div>
@@ -36,21 +35,47 @@
     <p class="subtitle">
       Portretter og bryllup i et moderne, kuratert uttrykk.
     </p>
-    <a href="book" class="btn-primary">Book nå</a>
+    <button id="bookBtnHero" class="btn-primary">Book nå</button>
   </div>
 </section>
+
+<!-- PRICES -->
+<section id="priser-section" class="prices reveal">
+  <h2>Priser</h2>
+  <div class="price-list">
+    <div class="price-item"><span>Portrett session</span><span>4 500 kr</span></div>
+    <div class="price-item"><span>Familiefotografering</span><span>5 000 kr</span></div>
+    <div class="price-item"><span>Bryllup – Mini</span><span>10 500 kr</span></div>
+    <div class="price-item"><span>Bryllup – Halv dag</span><span>17 500 kr</span></div>
+    <div class="price-item"><span>Bryllup – Full dag</span><span>25 000 kr</span></div>
+  </div>
+</section>
+
+<!-- BOOK MODAL -->
+<div id="bookModal" class="modal">
+  <div class="modal-content reveal">
+    <span class="close">&times;</span>
+    <h2>Book forespørsel</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Navn" required>
+      <input type="email" placeholder="E-post" required>
+      <input type="text" placeholder="Type fotografering">
+      <textarea placeholder="Fortell kort om forespørselen"></textarea>
+      <button type="submit" class="btn-primary">Send forespørsel</button>
+    </form>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
   <p class="availability">Limited bookings per season</p>
   <nav class="site-nav-footer">
-    <a href="priser">Priser</a>
-    <a href="book">Book</a>
+    <a href="#priser-section">Priser</a>
+    <a href="#" id="bookBtnFooter">Book</a>
     <a href="https://instagram.com/szn.no" target="_blank">Instagram</a>
   </nav>
 </footer>
 
-<!-- JS -->
 <script src="script.js" defer></script>
 </body>
 </html>
