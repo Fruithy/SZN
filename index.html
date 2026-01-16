@@ -1,58 +1,31 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SZN Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>SZN Studio – Øyeblikkets sesong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<main class="hero">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-content">
-    <h1 class="hero-text" id="heroText">SZN Studio</h1>
-    <p class="hero-subtext">Profesjonell fotografering – “Øyeblikkets sesong”.</p>
-    <div class="actions">
-      <a href="mailto:kontakt@szn.no" class="btn">Book Nå</a>
-      <a href="https://www.instagram.com/szn.no" target="_blank" class="insta" id="insta">@szn.no</a>
-      <div class="insta-preview" id="instaPreview">
-        <img src="https://source.unsplash.com/150x150/?fashion" alt="Instagram Preview">
-        <img src="https://source.unsplash.com/150x150/?portrait" alt="Instagram Preview">
-        <img src="https://source.unsplash.com/150x150/?wedding" alt="Instagram Preview">
-      </div>
-    </div>
-  </div>
-</main>
+<section class="hero">
+  <div class="hero-inner reveal">
+    <span class="eyebrow">SZN STUDIO</span>
+    <h1>Øyeblikkets<br>sesong</h1>
+    <p class="subtitle">
+      Portretter og bryllup i et moderne, kuratert uttrykk.
+    </p>
 
-<section id="priser" class="section">
-  <h2>Priser</h2>
-  <div class="price-grid">
-    <div class="price-card" data-details="1 time, 40+ redigerte bilder">
-      <h3>Portrett/Editorial</h3>
-      <p class="price">4 500 kr</p>
-    </div>
-    <div class="price-card" data-details="1–2 timer, 50+ ferdig redigerte bilder">
-      <h3>Familiefotografering</h3>
-      <p class="price">5 000 kr</p>
-    </div>
-    <div class="price-card" data-details="3–4 t dekning">
-      <h3>Bryllup – Mini</h3>
-      <p class="price">10 500 kr</p>
-    </div>
-    <div class="price-card" data-details="6–8 t dekning">
-      <h3>Bryllup – Halvdag</h3>
-      <p class="price">17 500 kr</p>
-    </div>
-    <div class="price-card" data-details="10–12 t dekning">
-      <h3>Bryllup – Full dag</h3>
-      <p class="price">25 000 kr</p>
+    <div class="hero-actions">
+      <a href="book.html" class="btn-primary">Book nå</a>
+      <a href="https://instagram.com/szn.no" target="_blank" class="btn-secondary">Instagram</a>
+      <a href="priser.html" class="btn-secondary">Priser</a>
     </div>
   </div>
-  <p class="price-details" id="priceDetails"></p>
 </section>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
