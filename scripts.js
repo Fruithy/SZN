@@ -1,118 +1,173 @@
-document.addEventListener('DOMContentLoaded', function(){
-  // ===== Dynamic year in footer =====
-  const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+/* --- Reset og grunnleggende --- */
+* {margin:0; padding:0; box-sizing:border-box;}
+body, html {height:100%; font-family: 'Montserrat', sans-serif; overflow-x:hidden; background:#0f0f0f; color:#fff;}
 
-  // ===== Mobile menu toggle =====
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      const expanded = navLinks.style.display === 'flex';
-      navLinks.style.display = expanded ? 'none' : 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.background = 'rgba(15,15,15,0.9)';
-      navLinks.style.padding = '12px';
-    });
-  }
+/* --- Hero --- */
+.hero {
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  text-align:center;
+  height:100vh;
+  overflow:hidden;
+}
 
-  // ===== Smooth scroll =====
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if (href.length > 1) {
-        e.preventDefault();
-        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+.hero-bg {
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
+  z-index:0;
+  overflow:hidden;
+}
 
-  // ===== Keyword hover effect =====
-  const cloud = document.getElementById('keywordCloud');
-  if (cloud) {
-    Array.from(cloud.children).forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        el.style.transform = 'translateY(-8px) scale(1.05)';
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = '';
-      });
-    });
-  }
+/* Moving light stripes */
+.light-stripes {
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,0,85,0.1),
+    rgba(255,0,85,0.1) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  animation: moveStripes 15s linear infinite;
+}
+.light-stripes.second {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,255,204,0.08),
+    rgba(0,255,204,0.08) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  animation: moveStripes 20s linear infinite reverse;
+}
 
-  // ===== Formspree async submission =====
-  const form = document.getElementById('leadForm');
-  const status = document.getElementById('formStatus');
-  if (form) {
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      status.textContent = 'Sender...';
+@keyframes moveStripes {
+  0% {transform: translate(0,0);}
+  100% {transform: translate(-50%,50%);}
+}
 
-      const data = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          status.textContent = 'Takk! Vi har mottatt meldingen din.';
-          form.reset();
-        } else {
-          status.textContent = 'Oops! Noe gikk galt. Prøv igjen.';
-        }
-      } catch {
-        status.textContent = 'Nettverksfeil. Vennligst prøv igjen.';
-      }
-    });
-  }
+.hero-content {
+  position: relative;
+  z-index:1;
+  max-width:700px;
+  padding:2rem;
+  overflow:visible;
+}
 
-  // ===== Floating animated keyword cloud =====
-  const keywords = document.querySelectorAll('#keywordCloud span');
-  function animateKeywords() {
-    keywords.forEach((word) => {
-      const delay = Math.random() * 5000;
-      const duration = 3000 + Math.random() * 3000;
-      const x = (Math.random() - 0.5) * 40;
-      const y = (Math.random() - 0.5) * 20;
-      const opacity = 0.6 + Math.random() * 0.4;
+/* Fade-in hero text word by word */
+.hero-text {
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  font-size:4rem;
+  color:#ff0055;
+  letter-spacing:2px;
+}
 
-      word.style.transition = `transform ${duration}ms ease-in-out, opacity ${duration}ms ease-in-out`;
-      setTimeout(() => {
-        word.style.transform = `translate(${x}px, ${y}px)`;
-        word.style.opacity = opacity;
-      }, delay);
-      setTimeout(() => {
-        word.style.transform = `translate(0, 0)`;
-        word.style.opacity = 1;
-      }, delay + duration);
-    });
-  }
-  if (keywords.length > 0) {
-    setInterval(animateKeywords, 6000);
-    animateKeywords();
-  }
+.hero-subtext {
+  font-size:1.5rem;
+  color:#ffffffcc;
+  margin:1rem 0 2rem;
+  opacity:0;
+  animation: fadeIn 2s forwards 1.5s;
+}
+@keyframes fadeIn {to {opacity:1;}}
 
-  // ===== Sequential reveal for "Vår tilnærming" steps =====
-  const steps = document.querySelectorAll('.step');
-  const stepContainer = document.querySelector('.steps');
+/* --- Actions --- */
+.actions {display:flex; flex-direction: column; gap:1rem; align-items:center; position:relative;}
+.btn {
+  padding:1rem 2rem;
+  background:#00ffcc;
+  color:#0f0f0f;
+  font-weight:700;
+  border-radius:50px;
+  text-decoration:none;
+  transition:0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffcc;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%,100% {box-shadow:0 0 25px #00ffcc;}
+  50% {box-shadow:0 0 40px #00ffcc;}
+}
 
-  function revealStepsSequentially() {
-    steps.forEach((step, index) => {
-      setTimeout(() => {
-        step.classList.add('visible');
-      }, index * 300); // delay each step
-    });
-  }
+/* --- Instagram --- */
+.insta {
+  color:#ff0055;
+  font-weight:600;
+  text-decoration:none;
+  font-size:1.2rem;
+  transition:0.3s;
+  position:relative;
+}
+.insta:hover {color:#ff3399;}
+.insta-preview {
+  display:flex;
+  gap:0.5rem;
+  margin-top:1rem;
+  opacity:0;
+  transform:translateY(-10px);
+  transition:0.3s;
+}
+.insta:hover + .insta-preview,
+.insta-preview:hover {opacity:1; transform:translateY(0);}
+.insta-preview img {width:80px; border-radius:8px; object-fit:cover; box-shadow:0 0 10px rgba(255,255,255,0.3);}
 
-  const stepObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        revealStepsSequentially();
-        stepObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
+/* --- Priser --- */
+#priser {
+  background: #111;
+  color: #fff;
+  padding: 6rem 5%;
+  text-align: center;
+}
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 2rem;
+  margin-top:2rem;
+}
+.price-card {
+  background:#1a1a1a;
+  padding:2rem;
+  border-radius:12px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  border:1px solid #222;
+  cursor:pointer;
+}
+.price-card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 8px 25px rgba(0,255,204,0.4);
+  background: #1f1f1f;
+}
+.price-card h3 {
+  font-size:1.4rem;
+  margin-bottom:0.5rem;
+  color:#ff0055;
+}
+.price-card .price {
+  font-size:1.8rem;
+  font-weight:700;
+  color:#00ffcc;
+}
+.price-details {
+  margin-top:1rem;
+  font-size:1rem;
+  color:#ffffffaa;
+  height:1.2em;
+}
 
-  if (stepContainer) stepObserver.observe(stepContainer);
-});
+/* --- Responsiv --- */
+@media(max-width:768px){
+  .hero-text {font-size:3rem;}
+  .hero-subtext {font-size:1.2rem;}
+  .actions {gap:0.5rem;}
+  .insta-preview img {width:60px;}
+}
