@@ -1,149 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SZN.NO — This is your branding SZN.</title>
-  <meta name="description" content="SZN.NO — Strategisk, minimalistisk merkevarebygging. Vi skaper identiteter og digitale opplevelser som konverterer." />
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/0N03mCrc/Chat-GPT-Image-Oct-31-2025-05-09-25-PM.png">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SZN Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- ✅ Header -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">SZN.<span class="dot">NO</span></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#contact" class="cta">Kontakt oss</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Meny">☰</button>
-    </div>
-  </header>
 
-  <!-- ✅ Hero Section -->
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Merkevarebygging for <span class="accent">neste generasjon.</span></h1>
-          <p class="lead">Strategisk enkelhet. Maksimal effekt. Vi bygger identiteter, nettsider og historier som får deg til å skille deg ut.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Start et prosjekt</a>
-          </div>
-          <ul class="stats">
-            <li><strong>50+</strong><span>Merkevarer lansert</span></li>
-            <li><strong>8x</strong><span>Økt merkevarekjennskap</span></li>
-            <li><strong>40%</strong><span>Bedre konvertering</span></li>
-          </ul>
-        </div>
-        <div class="hero-visual">
-          <div class="card">
-            <div class="card-top">SZN • Identitet</div>
-            <div class="card-body">
-              <h3>Vi gjør førsteinntrykket uforglemmelig.</h3>
-              <p>Strategidrevet design, gjennomført visuell profil og nettsider som konverterer.</p>
-            </div>
-            <div class="card-accent"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ Tilnærming Section -->
-    <section id="approach" class="approach">
-      <div class="container">
-        <h2>Vår tilnærming</h2>
-        <div class="steps">
-          <div class="step">
-            <h4>Innsikt</h4>
-            <p>Vi kartlegger markedet, målgruppen og mulighetene for merkevaren din.</p>
-          </div>
-          <div class="step">
-            <h4>Strategi</h4>
-            <p>Posisjonering, navngivning og kommunikasjon som gir klar retning.</p>
-          </div>
-          <div class="step">
-            <h4>Design</h4>
-            <p>Visuell identitet, bevegelse og nettsider som bygger gjenkjennelse.</p>
-          </div>
-          <div class="step">
-            <h4>Lansering</h4>
-            <p>Gå-til-marked-materiell og optimalisering for målbare resultater.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ Keywords Section -->
-    <section id="keywords" class="keywords container">
-      <h2>Stikkord</h2>
-      <p class="muted">Ord vi lever etter — og det vi faktisk gjør.</p>
-      <div class="keyword-cloud" id="keywordCloud">
-        <span>Strategi</span><span>Identitet</span><span>Digital</span><span>Historiefortelling</span>
-        <span>Konvertering</span><span>Designsystem</span><span>Klarhet</span><span>Opplevelse</span>
-        <span>Synlighet</span><span>Skalerbarhet</span><span>Bevegelse</span><span>Merkevare</span>
-      </div>
-      <p class="cta-note">SZN.NO er stedet for profesjonell, moderne merkevarebygging — strategisk, minimalistisk og effektivt.</p>
-    </section>
-
-    <!-- ✅ Contact Section -->
-    <section id="contact" class="contact container">
-      <div class="contact-inner">
-        <div>
-          <h2>Alltid relevant. Alltid i SZN.</h2>
-          <p class="muted">Fortell oss kort om prosjektet — mål, tidsramme og budsjett. Vi svarer innen 48 timer.</p>
-        </div>
-
-        <!-- ✅ Formspree form -->
-        <form 
-          id="leadForm" 
-          class="lead-form" 
-          action="https://formspree.io/f/xjkprpbz" 
-          method="POST"
-        >
-          <label>
-            Firma
-            <input type="text" name="company" required>
-          </label>
-          <label>
-            E-post
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            Kort beskrivelse
-            <textarea name="message" rows="4" placeholder="Hva ønsker du å skape?" required></textarea>
-          </label>
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Send</button>
-            <button class="btn ghost" type="reset">Tøm</button>
-          </div>
-          <p id="formStatus" class="form-status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
- <!-- ✅ Footer -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <small>© <span id="year"></span> SZN.NO — This is your branding SZN.</small>
-    <nav class="social">
-      <a href="https://www.instagram.com/szn.no/" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         class="social-link">
-        Instagram
-      </a>
-    </nav>
+<main class="hero">
+  <div class="hero-bg">
+    <div class="light-stripes"></div>
+    <div class="light-stripes second"></div>
   </div>
-</footer>
+  <div class="hero-content">
+    <h1 class="hero-text" id="heroText">SZN Studio</h1>
+    <p class="hero-subtext">Profesjonell fotografering – vi fanger øyeblikkene som betyr mest.</p>
+    <div class="actions">
+      <a href="mailto:kontakt@szn.no" class="btn">Book Nå</a>
+      <a href="https://www.instagram.com/szn.no" target="_blank" class="insta" id="insta">@szn.no</a>
+      <div class="insta-preview" id="instaPreview">
+        <img src="https://source.unsplash.com/150x150/?fashion" alt="Instagram Preview">
+        <img src="https://source.unsplash.com/150x150/?portrait" alt="Instagram Preview">
+        <img src="https://source.unsplash.com/150x150/?wedding" alt="Instagram Preview">
+      </div>
+    </div>
+  </div>
+</main>
 
-  <script src="scripts.js" defer></script>
+<section id="priser" class="section">
+  <h2>Priser</h2>
+  <div class="price-grid">
+    <div class="price-card" data-details="1 time, 40+ redigerte bilder">
+      <h3>Portrett/Editorial</h3>
+      <p class="price">6 500 kr</p>
+    </div>
+    <div class="price-card" data-details="1–2 timer, 50+ ferdig redigerte bilder">
+      <h3>Familiefotografering</h3>
+      <p class="price">7 000 kr</p>
+    </div>
+    <div class="price-card" data-details="3–4 t dekning">
+      <h3>Bryllup – Mini</h3>
+      <p class="price">17 500 kr</p>
+    </div>
+    <div class="price-card" data-details="6–8 t dekning">
+      <h3>Bryllup – Halvdag</h3>
+      <p class="price">27 500 kr</p>
+    </div>
+    <div class="price-card" data-details="10–12 t dekning">
+      <h3>Bryllup – Full dag</h3>
+      <p class="price">35 000 kr</p>
+    </div>
+  </div>
+  <p class="price-details" id="priceDetails"></p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
