@@ -12,9 +12,12 @@ document.querySelectorAll('a, button').forEach(el=>{el.addEventListener('mouseen
 
 // MODAL BOOKING
 const modal=document.getElementById('bookModal');
-const btns=[document.getElementById('bookBtn'), document.getElementById('bookBtnHero'), document.getElementById('bookBtnFooter')];
+const btns=[document.getElementById('bookBtn'),document.getElementById('bookBtnHero'),document.getElementById('bookBtnFooter')];
 const close=document.querySelector('.close');
-
 btns.forEach(btn=>{btn.addEventListener('click',()=>{modal.style.display='block';});});
 close.addEventListener('click',()=>{modal.style.display='none';});
 window.addEventListener('click',e=>{if(e.target==modal)modal.style.display='none';});
+
+// HERO PARALLAX
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll',()=>{heroBg.style.transform = `translateY(${window.scrollY*0.3}px)`;});
