@@ -1,9 +1,13 @@
 // FADE IN
 window.addEventListener('load',()=>{document.body.classList.add('loaded');});
 
-// SCROLL REVEAL
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.15});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// SCROLL REVEAL & PRICE POP
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){entry.target.classList.add('visible');}
+  });
+},{threshold:0.15});
+document.querySelectorAll('.reveal, .price-item').forEach(el => observer.observe(el));
 
 // CUSTOM CURSOR
 const cursor=document.querySelector('.cursor');
@@ -12,7 +16,7 @@ document.querySelectorAll('a, button').forEach(el=>{el.addEventListener('mouseen
 
 // MODAL BOOKING
 const modal=document.getElementById('bookModal');
-const btns=[document.getElementById('bookBtn'),document.getElementById('bookBtnHero'),document.getElementById('bookBtnFooter')];
+const btns=[document.getElementById('bookBtn'),document.getElementById('bookBtnHero')];
 const close=document.querySelector('.close');
 btns.forEach(btn=>{btn.addEventListener('click',()=>{modal.style.display='block';});});
 close.addEventListener('click',()=>{modal.style.display='none';});
@@ -21,3 +25,17 @@ window.addEventListener('click',e=>{if(e.target==modal)modal.style.display='none
 // HERO PARALLAX
 const heroBg = document.querySelector('.hero-bg');
 window.addEventListener('scroll',()=>{heroBg.style.transform = `translateY(${window.scrollY*0.3}px)`;});
+
+// PRICE DESCRIPTION ON HOVER
+const priceItems = document.querySelectorAll('.price-item');
+const descriptionBox = document.getElementById('priceDescription');
+priceItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    descriptionBox.textContent = item.dataset.description;
+    descriptionBox.classList.add('visible');
+  });
+  item.addEventListener('mouseleave', () => {
+    descriptionBox.textContent = '';
+    descriptionBox.classList.remove('visible');
+  });
+});
