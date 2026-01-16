@@ -5,27 +5,52 @@
   <title>SZN Studio – Øyeblikkets sesong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-inner reveal">
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">SZN</a>
+    <nav class="site-nav">
+      <a href="/priser">Priser</a>
+      <a href="/book">Book</a>
+      <a href="https://instagram.com/szn.no" target="_blank">Instagram</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <div class="hero-inner">
     <span class="eyebrow">SZN STUDIO</span>
     <h1>Øyeblikkets<br>sesong</h1>
     <p class="subtitle">
       Portretter og bryllup i et moderne, kuratert uttrykk.
     </p>
-
-    <div class="hero-actions">
-      <a href="book.html" class="btn-primary">Book nå</a>
-      <a href="https://instagram.com/szn.no" target="_blank" class="btn-secondary">Instagram</a>
-      <a href="priser.html" class="btn-secondary">Priser</a>
-    </div>
+    <a href="/book" class="btn-primary">Book nå</a>
   </div>
 </section>
 
-<script src="script.js" defer></script>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p class="availability">Limited bookings per season</p>
+  <nav class="site-nav-footer">
+    <a href="/priser">Priser</a>
+    <a href="/book">Book</a>
+    <a href="https://instagram.com/szn.no" target="_blank">Instagram</a>
+  </nav>
+</footer>
+
+<!-- JS -->
+<script src="/script.js" defer></script>
 </body>
 </html>
