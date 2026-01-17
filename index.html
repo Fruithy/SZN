@@ -1,82 +1,36 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <title>SZN Studio – Øyeblikkets sesong</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szn Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Szn Studio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="tjenester.html">Tjenester</a></li>
+                <li><a href="priser.html">Priser</a></li>
+                <li><a href="booking.html" class="cta">Book nå</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="cursor"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Szn Studio</h1>
+            <p>Moderne fotografering for livets største øyeblikk</p>
+            <a href="booking.html" class="cta hero-btn">Book nå</a>
+        </div>
+    </section>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <a href="#" class="logo">SZN</a>
-    <nav class="site-nav">
-      <a href="#priser-section">Priser</a>
-      <a href="#" id="bookBtn">Book</a>
-      <a href="https://instagram.com/szn.no" target="_blank">Instagram</a>
-    </nav>
-  </div>
-</header>
+    <footer>
+        <p>&copy; 2026 Szn Studio. Alle rettigheter reservert.</p>
+    </footer>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner reveal">
-    <span class="eyebrow">SZN STUDIO</span>
-    <h1>Øyeblikkets<br>sesong</h1>
-    <p class="subtitle">Portretter og bryllup med moderne, kuratert uttrykk</p>
-    <button id="bookBtnHero" class="btn-primary">Book nå</button>
-  </div>
-</section>
-
-<!-- PRICES -->
-<section id="priser-section" class="prices reveal">
-  <h2>Priser</h2>
-  <div class="price-list">
-    <div class="price-item" data-description="En eksklusiv portrettsession for enkeltpersoner.">
-      <span>Portrett session</span><span>4 500 kr</span>
-    </div>
-    <div class="price-item" data-description="Familiefotografering med fokus på naturlige og elegante øyeblikk.">
-      <span>Familiefotografering</span><span>5 000 kr</span>
-    </div>
-    <div class="price-item" data-description="Bryllup Mini: 3-4 timer dekning, ca. 50 ferdige bilder.">
-      <span>Bryllup – Mini</span><span>10 500 kr</span>
-    </div>
-    <div class="price-item" data-description="Bryllup Halv dag: 6 timer dekning, ca. 100 ferdige bilder.">
-      <span>Bryllup – Halv dag</span><span>17 500 kr</span>
-    </div>
-    <div class="price-item" data-description="Bryllup Full dag: Hele dagen, fra forberedelser til fest, ca. 200 bilder.">
-      <span>Bryllup – Full dag</span><span>25 000 kr</span>
-    </div>
-  </div>
-  <div id="priceDescription" class="price-description"></div>
-</section>
-
-<!-- BOOK MODAL -->
-<div id="bookModal" class="modal">
-  <div class="modal-content reveal">
-    <span class="close">&times;</span>
-    <h2>Book forespørsel</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Navn" required>
-      <input type="email" placeholder="E-post" required>
-      <input type="text" placeholder="Type fotografering">
-      <textarea placeholder="Fortell kort om forespørselen"></textarea>
-      <button type="submit" class="btn-primary">Send forespørsel</button>
-    </form>
-  </div>
-</div>
-
-<script src="script.js" defer></script>
+    <script src="javascript.js"></script>
 </body>
 </html>
