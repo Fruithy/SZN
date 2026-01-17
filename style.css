@@ -16,10 +16,6 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
-a {
-    text-decoration: none;
-}
-
 /* NAV */
 .navbar {
     display: flex;
@@ -67,34 +63,47 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #F9F9F9 0%, #FFFFFF 100%);
     text-align: center;
+    background: linear-gradient(135deg, #F9F9F9 0%, #FFFFFF 100%);
     position: relative;
-    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero-content h1,
+.hero-content p,
+.hero-content .cta {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+/* Animated text delays */
+.animated-text {
+    animation: fadeSlideIn 1s forwards;
 }
 
-.hero-btn {
-    font-size: 1.1rem;
+.animated-text.delay1 {
+    animation-delay: 0.5s;
 }
 
-/* TJENESTER & PRISER */
+.animated-text.delay2 {
+    animation-delay: 1s;
+}
+
+/* Keyframes for hero text */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SERVICES / PRICES / BOOKING STYLES */
 .services-container,
 .price-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 5%;
 }
 
 .service-card,
@@ -117,7 +126,7 @@ a {
     margin-bottom: 1rem;
 }
 
-/* KONTAKT */
+/* CONTACT FORM */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -135,30 +144,12 @@ a {
     font-size: 1rem;
 }
 
-.contact-form button {
-    margin-top: 1rem;
-}
-
 /* FOOTER */
 footer {
     padding: 2rem 5%;
     background: #1D1D1D;
     color: #fff;
     text-align: center;
-}
-
-/* FADE-IN ANIMATION */
-.appear {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.service-card,
-.price-card,
-.hero-content {
-    opacity: 0;
-    transform: translateY(50px);
 }
 
 /* RESPONSIVE */
