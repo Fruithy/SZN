@@ -1,19 +1,54 @@
-// Fade-in on scroll for services/prices
-const faders = document.querySelectorAll('.service-card, .price-card');
+// Gradient Wave Background
+const canvas = document.getElementById('heroCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const appearOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
-};
+let waveOffset = 0;
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
+function drawGradientWave(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const gradient = ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+    gradient.addColorStop(0, '#ff9a9e');
+    gradient.addColorStop(0.5, '#fad0c4');
+    gradient.addColorStop(1, '#fad0c4');
+    ctx.fillStyle = gradient;
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height/2);
+
+    for(let x=0; x<=canvas.width; x++){
+        const y = canvas.height/2 + Math.sin((x + waveOffset) * 0.01) * 50;
+        ctx.lineTo(x, y);
+    }
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.lineTo(0, canvas.height);
+    ctx.closePath();
+    ctx.fill();
+
+    waveOffset += 2;
+    requestAnimationFrame(drawGradientWave);
+}
+drawGradientWave();
+
+// Testimonials Carousel with Fade
+const testimonials = document.querySelectorAll('.testimonial');
+let current = 0;
+
+function showTestimonial(index){
+    testimonials.forEach((t,i)=>{
+        t.classList.toggle('active', i===index);
+    });
+}
+showTestimonial(current);
+
+setInterval(()=>{
+    current = (current+1) % testimonials.length;
+    showTestimonial(current);
+}, 4000);
+
+// Responsive Canvas
+window.addEventListener('resize', ()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
