@@ -1,38 +1,110 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Szn Studio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZN Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="overlay"></div>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">Szn Studio</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Hjem</a></li>
-            <li><a href="tjenester.html">Tjenester</a></li>
-            <li><a href="priser.html">Priser</a></li>
-            <li><a href="booking.html" class="cta">Book nå</a></li>
-        </ul>
-    </nav>
-</header>
+        <!-- Logo top-left -->
+        <div class="hero-logo">SZN Studio</div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="animated-text">Szn Studio</h1>
-        <p class="animated-text delay1">Moderne fotografering for livets største øyeblikk</p>
-        <a href="booking.html" class="cta animated-text delay2">Book nå</a>
-    </div>
-</section>
+        <!-- Centered hero content -->
+        <div class="hero-content">
+            <h1>Sesongens beste øyeblikk</h1>
+            <a href="mailto:Magnusrobbestad@gmail.com" class="cta-button">Bestill en time</a>
+        </div>
+    </header>
 
-<footer>
-    <p>&copy; 2026 Szn Studio. Alle rettigheter reservert.</p>
-</footer>
+  
 
-<script src="javascript.js"></script>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Hva kundene sier</h2>
+        <div class="testimonial-container">
+            <div class="testimonial active">
+                <p>“Profesjonell, kreativ, og fanget essensen av vårt arrangement.”</p>
+                <span>- Anna L.</span>
+            </div>
+            <div class="testimonial">
+                <p>“Eksepsjonell fotografering og en flott opplevelse fra start til slutt.”</p>
+                <span>- Johan K.</span>
+            </div>
+            <div class="testimonial">
+                <p>“Moderne, stilfullt og høy kvalitet – akkurat det vi ønsket!”</p>
+                <span>- Lise M.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="prices">
+        <h2>Tjenester og priser</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Portrettfotografering</h3>
+                <p class="price">2 500 NOK</p>
+                <ul>
+                    <li>1 times fotografering</li>
+                    <li>15 ferdigredigerte digitale bilder</li>
+                    <li>Enkel etterbehandling</li>
+                    <li>Online leveringsgalleri</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Eventfotografering (per time)</h3>
+                <p class="price">1 200 NOK</p>
+                <ul>
+                    <li>Dekning av arrangementet</li>
+                    <li>10–15 bilder per time</li>
+                    <li>Enkel etterbehandling</li>
+                    <li>Digital levering</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Bryllupspakke</h3>
+                <p class="price">15 000 NOK</p>
+                <ul>
+                    <li>Opptil 8 timer fotografering</li>
+                    <li>150+ ferdigredigerte digitale bilder</li>
+                    <li>Online galleri</li>
+                    <li>Minialbum inkludert</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Kommersiell / Bedrift</h3>
+                <p class="price">5 000 NOK</p>
+                <ul>
+                    <li>2–3 timers fotografering</li>
+                    <li>Profesjonell etterbehandling</li>
+                    <li>Digitale bilder klare for nettsider og markedsføring</li>
+                    <li>Avtalt leveringsformat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Kontakt SZN Studio</h2>
+        <p>For forespørsler og bestillinger, vennligst ta kontakt via e-post:</p>
+        <a href="mailto:info@szn.no" class="cta-button">Send e-post</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar">
+            <div class="footer-progress"></div>
+        </div>
+        <p>© 2026 SZN Studio. Alle rettigheter reservert.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
