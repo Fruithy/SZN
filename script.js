@@ -1,5 +1,5 @@
-// Fade-in on scroll
-const faders = document.querySelectorAll('.service-card, .price-card, .hero-content');
+// Fade-in on scroll for services/prices
+const faders = document.querySelectorAll('.service-card, .price-card');
 
 const appearOptions = {
   threshold: 0.1,
@@ -16,14 +16,4 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
-});
-
-// Smooth scroll for anchor links (optional if you later add anchors)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
-  });
 });
