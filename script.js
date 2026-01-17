@@ -1,41 +1,29 @@
-// FADE IN
-window.addEventListener('load',()=>{document.body.classList.add('loaded');});
+// Fade-in on scroll
+const faders = document.querySelectorAll('.service-card, .price-card, .hero-content');
 
-// SCROLL REVEAL & PRICE POP
-const observer = new IntersectionObserver(entries => {
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
   entries.forEach(entry => {
-    if(entry.isIntersecting){entry.target.classList.add('visible');}
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    appearOnScroll.unobserve(entry.target);
   });
-},{threshold:0.15});
-document.querySelectorAll('.reveal, .price-item').forEach(el => observer.observe(el));
+}, appearOptions);
 
-// CUSTOM CURSOR
-const cursor=document.querySelector('.cursor');
-window.addEventListener('mousemove',e=>{cursor.style.top=`${e.clientY}px`; cursor.style.left=`${e.clientX}px`;});
-document.querySelectorAll('a, button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover')); el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));});
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
-// MODAL BOOKING
-const modal=document.getElementById('bookModal');
-const btns=[document.getElementById('bookBtn'),document.getElementById('bookBtnHero')];
-const close=document.querySelector('.close');
-btns.forEach(btn=>{btn.addEventListener('click',()=>{modal.style.display='block';});});
-close.addEventListener('click',()=>{modal.style.display='none';});
-window.addEventListener('click',e=>{if(e.target==modal)modal.style.display='none';});
-
-// HERO PARALLAX
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll',()=>{heroBg.style.transform = `translateY(${window.scrollY*0.3}px)`;});
-
-// PRICE DESCRIPTION ON HOVER
-const priceItems = document.querySelectorAll('.price-item');
-const descriptionBox = document.getElementById('priceDescription');
-priceItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    descriptionBox.textContent = item.dataset.description;
-    descriptionBox.classList.add('visible');
-  });
-  item.addEventListener('mouseleave', () => {
-    descriptionBox.textContent = '';
-    descriptionBox.classList.remove('visible');
+// Smooth scroll for anchor links (optional if you later add anchors)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
   });
 });
